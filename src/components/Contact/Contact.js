@@ -1,12 +1,15 @@
 import React from "react"
 import { Formik, Form, Field, ErrorMessage } from "formik"
-import { Title, styles } from "../../utils"
+import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 import Text from "./Text"
 import {FaPaperPlane} from 'react-icons/fa'
 
 const Contact = () => (
   <>
+  <Section>
+
+  
     <Title title="direkter" subtitle="kontakt" />
     <ContactWrapper>
       <div>
@@ -37,7 +40,7 @@ const Contact = () => (
           {({ isSubmitting, errors }) => (
              
             <FormWrapper>
-              <Form method="POST" data-netlify="true">
+              {/* <Form method="POST" data-netlify="true"> */}
                 <form action="post" data-netlify="true">
                 <div>
                   
@@ -63,7 +66,7 @@ const Contact = () => (
                     <ErrorMessage name="email" disabled component="button" className="submit"/>
                   }
                 </form>
-              </Form>
+              {/* </Form> */}
             </FormWrapper>
           )}
         </Formik>
@@ -72,6 +75,7 @@ const Contact = () => (
         <Text />
       </div> */}
     </ContactWrapper>
+    </Section>
   </>
 )
 

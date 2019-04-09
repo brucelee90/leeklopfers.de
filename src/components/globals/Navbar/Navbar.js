@@ -3,6 +3,7 @@ import NavbarHeader from './NavbarHeader'
 import NavbarIcons from "./NavbarIcons"
 import NavbarLinks from "./NavbarLinks"
 import styled from 'styled-components'
+import {Section} from '../../../utils'
 
 export default class Navbar extends Component {
     state={
@@ -18,15 +19,17 @@ export default class Navbar extends Component {
   render() {
     return (
         <NavWrapper>
-            <NavbarHeader handleNavbar={this.handleNavbar}/>
-            <NavbarLinks navbarOpen={this.state.navbarOpen}/>
-            <NavbarIcons/>
+                <NavbarHeader handleNavbar={this.handleNavbar}/>
+                <NavbarLinks navbarOpen={this.state.navbarOpen}/>
+                <NavbarIcons/>
         </NavWrapper>
     )
   }
 }
 
 const NavWrapper = styled.nav`
+padding: 0 2rem;
+
 @media (min-width:768px){
     display:flex;
     align-items:center;

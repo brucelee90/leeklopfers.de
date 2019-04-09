@@ -59,6 +59,7 @@ li{
   text-decoration: none;
   min-width:5rem;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .nav-link{

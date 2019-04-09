@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Title, styles } from "../../utils"
+import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 
 export default class About extends Component {
   render() {
     return (
-      <>
+      <Section>
         <Title title="etwas" subtitle="über mich" />
         <AboutWrapper>
           {/* <div className="me-img"> */}
@@ -25,7 +25,7 @@ export default class About extends Component {
             </div>
           </div>
         </AboutWrapper>
-      </>
+      </Section>
     )
   }
 }

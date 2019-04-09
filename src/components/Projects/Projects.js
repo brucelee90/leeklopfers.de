@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Title, styles } from "../../utils"
+import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 import Img from "gatsby"
 import { FaSearch, FaGithub } from "react-icons/fa"
@@ -40,6 +40,7 @@ export default class Projects extends Component {
   render() {
     return (
       <>
+      <Section>
         <Title title="und das sind" subtitle="meine Projekte" />
         <ProjectWrapper>
           {this.state.projects.map(item => {
@@ -83,6 +84,7 @@ export default class Projects extends Component {
             )
           })}
         </ProjectWrapper>
+        </Section>
       </>
     )
   }
