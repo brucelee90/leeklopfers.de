@@ -54,7 +54,7 @@ const Contact = () => (
                   <p className="title message">
                     Nachricht
                   </p>
-                  <textarea className="text-area field" rows="15" style={{width: '100%'}}></textarea>
+                  <textarea className="text-area field" name="message" rows="15" style={{width: '100%'}}></textarea>
                 </div>
 
                   {errors.isValid !== false &&
