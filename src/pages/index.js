@@ -4,17 +4,21 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import img from '../images/homeBcg.jpeg'
+import {Header, Banner, BannerButton} from '../utils'
+import Projects from '../components/Projects/Projects'
+import About from '../components/About/About'
+import Contact from '../components/Contact/Contact'
+
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Header img={img}>
+      <Banner title="Willkommen" subtitle="mein name ist lee"/>
+    </Header>
+    <Projects/>
+    <About/>
+    <Contact/>
   </Layout>
 )
 
