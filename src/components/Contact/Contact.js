@@ -38,6 +38,7 @@ const Contact = () => (
              
             <FormWrapper>
               <Form method="POST" data-netlify="true">
+                <form action="post">
                 <div>
                   
                   <p className="title">
@@ -61,7 +62,7 @@ const Contact = () => (
                   {errors.isValid === false &&
                     <ErrorMessage name="email" disabled component="button" className="submit"/>
                   }
-
+                </form>
               </Form>
             </FormWrapper>
           )}
