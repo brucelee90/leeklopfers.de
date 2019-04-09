@@ -1,133 +1,80 @@
-import React from "react"
-import { Formik, Form, Field, ErrorMessage } from "formik"
-import { Title, styles, Section } from "../../utils"
-import styled from "styled-components"
-import Text from "./Text"
-import {FaPaperPlane} from 'react-icons/fa'
+import React from "react";
+import { navigateTo } from "gatsby-link";
 
-const Contact = () => (
-  <>
-  <Section>
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
-  
-    <Title title="direkter" subtitle="kontakt" />
-    <ContactWrapper>
+export default class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state
+      })
+    })
+      .then(() => navigateTo(form.getAttribute("action")))
+      .catch(error => alert(error));
+  };
+
+  render() {
+    return (
       <div>
-        <Formik
-          initialValues={{ email: ""}}
-          validate={values => {
-            let errors = {}
-            if (!values.email) {
-              errors.email = "Bitte E-Mail-Addresse eingeben"
-              errors.isValid = false
-            } else if (
-              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-            ) {
-              errors.email = "Ungültige E-Mail-Adresse"
-              errors.isValid = false
-            } 
-            return errors
-            
-          }}
-          onSubmit={(values, { setSubmitting }) => {
-            
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2))
-              setSubmitting(false)
-            }, 400)
-          }}
+        <h1>Contact</h1>
+        <form
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
         >
-          {({ isSubmitting, errors }) => (
-             
-            <FormWrapper>
-              {/* <Form method="POST" data-netlify="true"> */}
-              <form name="contact" method="POST" data-netlify="true">
-                <div>
-                  
-                  <p className="title">
-                    E-Mail-Addresse
-                  </p>
-                  <Field type="email" name="email" className="field e-mail"/>
-                </div>
-
-                <div>
-                  <p className="title message">
-                    Nachricht
-                  </p>
-                  <textarea className="text-area field" name="message" rows="15" style={{width: '100%'}}></textarea>
-                </div>
-
-                  {errors.isValid !== false &&
-                    <button type="submit" disabled={isSubmitting} className="submit" >
-                      Nachricht Senden <FaPaperPlane className="plane"/>
-                    </button>
-                  }
-                  {errors.isValid === false &&
-                    <ErrorMessage name="email" disabled component="button" className="submit"/>
-                  }
-                </form>
-              {/* </Form> */}
-            </FormWrapper>
-          )}
-        </Formik>
+          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out:{" "}
+              <input name="bot-field" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your name:<br />
+              <input type="text" name="name" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your email:<br />
+              <input type="email" name="email" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Message:<br />
+              <textarea name="message" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
       </div>
-      {/* <div>
-        <Text />
-      </div> */}
-    </ContactWrapper>
-    </Section>
-  </>
-)
-
-export default Contact
-
-const ContactWrapper = styled.div`  
-width: 100%;
-display: grid;
-grid-template-columns: 1fr;
-`
-
-const FormWrapper = styled.form`
-.title{
-  margin-bottom: .3rem;
-  padding: 3px;
+    );
+  }
 }
-.field{
-  margin-bottom: 1rem;
-  padding: .5rem;
-  border: none;
-  background: ${styles.colors.lightGrey};
-}
-.e-mail{
-  width: 50%;
-}
-.text-area{
-  font-family:'Josefin Sans', sans-serif;
-  font-size: .8rem;
-  resize: none;
-}
-
-.plane{
-  margin-left: .5rem;
-}
-
-.submit{
-  color: ${styles.colors.mainBlack};
-    border: .1rem ${styles.colors.mainBlack} solid;
-    width:50%;
-    padding: .25rem;
-    font-size: .8rem;
-    transition: 50ms linear;
-
-    &:hover{
-        cursor:pointer;
-        background-color: ${styles.colors.mainBlack};
-        color: ${styles.colors.primaryColor};
-    }
-    &:disabled{
-      color: ${styles.colors.mainGrey};
-      background-color: ${styles.colors.lightGrey};
-      cursor: not-allowed;
-    }
-}
-`
