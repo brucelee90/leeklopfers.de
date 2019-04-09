@@ -37,7 +37,7 @@ const Contact = () => (
           {({ isSubmitting, errors }) => (
              
             <FormWrapper>
-              <Form>
+              <Form method="POST" data-netlify="true">
                 <div>
                   
                   <p className="title">
