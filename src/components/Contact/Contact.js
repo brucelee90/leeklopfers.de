@@ -41,7 +41,7 @@ const Contact = () => (
              
             <FormWrapper>
               {/* <Form method="POST" data-netlify="true"> */}
-                <form action="post" data-netlify="true">
+              <form name="contact" method="POST" data-netlify="true">
                 <div>
                   
                   <p className="title">
