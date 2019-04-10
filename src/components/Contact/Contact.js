@@ -2,6 +2,8 @@ import React from "react";
 import { navigateTo } from "gatsby-link";
 import styled from 'styled-components'
 import { Title, styles, Section } from "../../utils"
+import {FaPaperPlane, FaCheckCircle} from 'react-icons/fa'
+import Modal from './Modal'
 
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)
 
@@ -31,12 +33,12 @@ export default class Contact extends React.Component {
       email: null,
       message: null,
       formErrors:{
-        name: '.',
-        email: '.',
-        message: '.'
+        name: '(mindestens 3 Zeichen)',
+        email: ' ',
+        message: '(mindestens 5 Zeichen)'
       },
-      modalOpen: false,
-      disabled: true
+      disabled: true,
+      thankYouMessage:''
     };
   }
 
@@ -54,22 +56,22 @@ export default class Contact extends React.Component {
       case 'name':
         formErrors.name = 
           value.length < 3 && value.length >= 0
-            ? "Ihr Name sollte mindestens 2 Zeichen lang sein"
-            : '';
+            ? "(mindestens 3 Zeichen)"
+            : <FaCheckCircle className="check"/>;
             break;
 
       case 'message':
         formErrors.message = 
-          value.length < 6 && value.length >= 0
-            ? "Ihre Nachricht sollte mindestens 6 Buchstaben beinhalten"
-            : '';
+          value.length <= 5 && value.length >= 0
+            ? "(mindestens 5 Zeichen)"
+            : <FaCheckCircle className="check"/>;;
             break;
 
       case 'email':
           formErrors.email =
           emailRegex.test(value) && value.length >= 0
-              ? ''
-              : 'Bitte prüfen Sie ihre E-Mail-Adresse';
+              ? <FaCheckCircle className="check"/>
+              : ' ';
               break;
       }
 
@@ -83,26 +85,46 @@ export default class Contact extends React.Component {
   }
 
   handleSubmit = e => {
+
     e.preventDefault();
     if (formValid(this.state.formErrors) === true) {
       this.setState(
-        {modalOpen: true}, ()=>console.log(this.state.modalOpen)
+        {modalOpen: 'block'}, ()=>console.log(this.state.modalOpen)
         )
     }
+
+    console.log(e);
+    
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state })
     })
-      .then(() => alert("Success!"))
+      .then(() => this.setState(
+        {
+          name: null,
+          email: null,
+          message: null,
+          formErrors:{
+            name: '(mindestens 3 Zeichen)',
+            email: ' ',
+            message: '(mindestens 5 Zeichen)'
+          },
+        thankYouMessage: 'Vielen Dank für Ihre Nachricht',
+        disabled: true,
+      }
+        ))
+
       .catch(error => alert(error));
 
   };
 
   render() {
     return (
-      <ContactWrapper>
+      <Section>
+        <Title title="direkter" subtitle="kontakt"/>
+
         <FormWrapper
           name="contact"
           method="post"
@@ -127,7 +149,7 @@ export default class Contact extends React.Component {
               <div 
               className={'title ' + (this.state.formErrors.name.length > 0 && 'error')}>
               
-              Name
+              Name {this.state.formErrors.name}
               </div>
               
               <input 
@@ -142,7 +164,7 @@ export default class Contact extends React.Component {
           <p>
             <lable>
             <div className={'title ' + (this.state.formErrors.email.length > 0 && 'error')}>
-                E-Mail
+                E-Mail {this.state.formErrors.email}
               </div>
               <input 
               className="field"
@@ -155,7 +177,7 @@ export default class Contact extends React.Component {
             <lable>
               <div 
               className={'title ' + (this.state.formErrors.message.length > 0 && 'error')}>
-                Nachricht
+                Nachricht {this.state.formErrors.message}
               </div>
               <textarea 
               className="field text-area"
@@ -165,11 +187,20 @@ export default class Contact extends React.Component {
             </lable>
           </p>
           <p>
-            <button disabled={this.state.disabled} type="submit">
-            Send</button>
+            <button
+            className="submit"
+            disabled={this.state.disabled} 
+            type="submit">
+            {
+              this.state.thankYouMessage.length > 0
+              ? this.state.thankYouMessage
+              : <FaPaperPlane className="plane"/>
+            }
+              {/* Nachricht Senden <FaPaperPlane className="plane"/> */}
+            </button>
           </p>
         </FormWrapper>
-      </ContactWrapper>
+      </Section>
     );
   }
 }
@@ -191,6 +222,7 @@ background: black;
 
 const FormWrapper = styled.form`
 
+
 .error{
   color: ${styles.colors.danger};
 }
@@ -205,6 +237,7 @@ const FormWrapper = styled.form`
   padding: .5rem;
   border: none;
   background: ${styles.colors.lightGrey};
+  width: 100%;
 }
 .e-mail{
   width: 50%;
@@ -217,6 +250,11 @@ const FormWrapper = styled.form`
 
 .plane{
   margin-left: .5rem;
+}
+
+.check{
+  color: ${styles.colors.success};
+  font-size: .8rem;
 }
 
 .submit{
@@ -233,7 +271,7 @@ const FormWrapper = styled.form`
         color: ${styles.colors.primaryColor};
     }
     &:disabled{
-      color: ${styles.colors.mainGrey};
+      color: ${styles.colors.mainBlack};
       background-color: ${styles.colors.lightGrey};
       cursor: not-allowed;
     }

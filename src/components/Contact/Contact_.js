@@ -8,8 +8,6 @@ import {FaPaperPlane} from 'react-icons/fa'
 const Contact = () => (
   <>
   <Section>
-
-  
     <Title title="direkter" subtitle="kontakt" />
     <ContactWrapper>
       <div>

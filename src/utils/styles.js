@@ -9,6 +9,7 @@ export const colors = {
     secondaryColor: `#F2AF29`,
     thirdColor: `#474747`,
     danger: `red`,
+    success: 'green'
     
     }
 export const textSlanted = `font-family: 'Arizonia', cursive;`
