@@ -53,21 +53,21 @@ export default class Contact extends React.Component {
     switch(name){
       case 'name':
         formErrors.name = 
-          value.length < 3 && value.length > 0
+          value.length < 3 && value.length >= 0
             ? "Ihr Name sollte mindestens 2 Zeichen lang sein"
             : '';
             break;
 
       case 'message':
         formErrors.message = 
-          value.length < 6 && value.length > 0
+          value.length < 6 && value.length >= 0
             ? "Ihre Nachricht sollte mindestens 6 Buchstaben beinhalten"
             : '';
             break;
 
       case 'email':
           formErrors.email =
-          emailRegex.test(value) && value.length > 0
+          emailRegex.test(value) && value.length >= 0
               ? ''
               : 'Bitte prüfen Sie ihre E-Mail-Adresse';
               break;
@@ -85,25 +85,25 @@ export default class Contact extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     if (formValid(this.state.formErrors) === true) {
-      console.log(`
-      --SUBMITTING
-      name: ${this.state.name}
-      `);
-
       this.setState(
         {modalOpen: true}, ()=>console.log(this.state.modalOpen)
         )
-    }else{
-      console.log('error');
     }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
 
   };
 
   render() {
     return (
-      <div>
-        <h1>Contact</h1>
-        <form
+      <ContactWrapper>
+        <FormWrapper
           name="contact"
           method="post"
           action="/thanks/"
@@ -123,54 +123,119 @@ export default class Contact extends React.Component {
           </p>
 
           <p>
-            <LabelWrapper>
-              <div className={this.state.formErrors.name.length > 0 && 'error'}>
+            <lable>
+              <div 
+              className={'title ' + (this.state.formErrors.name.length > 0 && 'error')}>
+              
               Name
               </div>
               
               <input 
+              className="field"
               type="text" 
               name="name" 
               onChange={this.handleChange}
               
               />
-            </LabelWrapper>
+            </lable>
           </p>
           <p>
-            <LabelWrapper>
-            <div className={this.state.formErrors.email.length > 0 && 'error'}>
+            <lable>
+            <div className={'title ' + (this.state.formErrors.email.length > 0 && 'error')}>
                 E-Mail
               </div>
               <input 
+              className="field"
               type="email" 
               name="email" 
               onChange={this.handleChange} />
-            </LabelWrapper>
+            </lable>
           </p>
           <p>
-            <LabelWrapper>
-              <div className={this.state.formErrors.message.length > 0 && 'error'}>
+            <lable>
+              <div 
+              className={'title ' + (this.state.formErrors.message.length > 0 && 'error')}>
                 Nachricht
               </div>
               <textarea 
+              className="field text-area"
               name="message" 
+              rows="15"
               onChange={this.handleChange} />
-            </LabelWrapper>
+            </lable>
           </p>
           <p>
             <button disabled={this.state.disabled} type="submit">
             Send</button>
           </p>
-        </form>
-      </div>
+        </FormWrapper>
+      </ContactWrapper>
     );
   }
 }
 
 const LabelWrapper = styled.label`
 
+/* .error{
+  color: ${styles.colors.danger};
+  } */
+
+`
+
+const ContactWrapper = styled.div`  
+width: 100%;
+display: grid;
+grid-template-columns: 1fr;
+background: black;
+`
+
+const FormWrapper = styled.form`
+
 .error{
   color: ${styles.colors.danger};
-  }
+}
 
+.title{
+  margin-bottom: .3rem;
+  padding: 3px;
+}
+
+.field{
+  margin-bottom: 1rem;
+  padding: .5rem;
+  border: none;
+  background: ${styles.colors.lightGrey};
+}
+.e-mail{
+  width: 50%;
+}
+.text-area{
+  font-family:'Josefin Sans', sans-serif;
+  font-size: .8rem;
+  resize: none;
+}
+
+.plane{
+  margin-left: .5rem;
+}
+
+.submit{
+  color: ${styles.colors.mainBlack};
+    border: .1rem ${styles.colors.mainBlack} solid;
+    width:50%;
+    padding: .25rem;
+    font-size: .8rem;
+    transition: 50ms linear;
+
+    &:hover{
+        cursor:pointer;
+        background-color: ${styles.colors.mainBlack};
+        color: ${styles.colors.primaryColor};
+    }
+    &:disabled{
+      color: ${styles.colors.mainGrey};
+      background-color: ${styles.colors.lightGrey};
+      cursor: not-allowed;
+    }
+}
 `
