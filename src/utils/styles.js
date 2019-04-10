@@ -8,7 +8,7 @@ export const colors = {
     primaryColorHover: `#ad7913`,
     secondaryColor: `#F2AF29`,
     thirdColor: `#474747`,
-    visitedColor: `red`,
+    danger: `red`,
     
     }
 export const textSlanted = `font-family: 'Arizonia', cursive;`
