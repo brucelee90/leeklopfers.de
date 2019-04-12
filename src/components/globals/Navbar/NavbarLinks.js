@@ -28,11 +28,6 @@ export default class NavbarLinks extends Component {
         path: '#contact',
         name: 'Kontakt'
       },
-      {
-        id: 4,
-        path: '/blog',
-        name: 'blog'
-      }
     ]
   }
 
