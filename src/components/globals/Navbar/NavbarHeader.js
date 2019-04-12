@@ -11,17 +11,21 @@ export default class NavbarHeader extends Component {
     const {handleNavbar} = this.props
     return (
       <HeaderWrapper>
+        {/*
         <Link style={{textDecoration:'none'}} to="#">
           <Logo>
             &#60;LeeVincent&#47;&#62;
           </Logo>
         </Link>
+        */}
         <FaBars
           className="toggle-icon"
           onClick={() => {
             handleNavbar()
           }}
         />
+
+        
       </HeaderWrapper>
     )
   }
