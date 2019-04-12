@@ -25,6 +25,10 @@ const formValid = formErrors =>{
   return valid
 }
 
+function resetForm() {
+   document.getElementById("myForm").reset();
+}
+
 export default class Contact extends React.Component {
   constructor(props) {
     super(props);
@@ -94,7 +98,7 @@ export default class Contact extends React.Component {
     }
 
     console.log(e);
-    
+    resetForm()
 
     fetch("/", {
       method: "POST",
@@ -111,7 +115,7 @@ export default class Contact extends React.Component {
             email: ' ',
             message: '(mindestens 5 Zeichen)'
           },
-        thankYouMessage: 'Vielen Dank für Ihre Nachricht',
+        thankYouMessage: 'Vielen Dank!',
         disabled: true,
       }
         ))
@@ -122,7 +126,7 @@ export default class Contact extends React.Component {
 
   render() {
     return (
-      <Section>
+      <Section id="contact">
         <Title title="direkter" subtitle="kontakt"/>
 
         <FormWrapper
@@ -132,6 +136,7 @@ export default class Contact extends React.Component {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
+          id="myForm"
         >
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
           <input type="hidden" name="form-name" value="contact" />
@@ -153,6 +158,7 @@ export default class Contact extends React.Component {
               </div>
               
               <input 
+              placeholder="Ihr Name"
               className="field"
               type="text" 
               name="name" 
@@ -167,6 +173,7 @@ export default class Contact extends React.Component {
                 E-Mail {this.state.formErrors.email}
               </div>
               <input 
+              placeholder="beispiel@mail.de"
               className="field"
               type="email" 
               name="email" 
@@ -180,6 +187,7 @@ export default class Contact extends React.Component {
                 Nachricht {this.state.formErrors.message}
               </div>
               <textarea 
+              placeholder="Ich freue mich auf Ihre Nachricht..."
               className="field text-area"
               name="message" 
               rows="15"
@@ -196,7 +204,6 @@ export default class Contact extends React.Component {
               ? this.state.thankYouMessage
               : <FaPaperPlane className="plane"/>
             }
-              {/* Nachricht Senden <FaPaperPlane className="plane"/> */}
             </button>
           </p>
         </FormWrapper>
@@ -236,7 +243,9 @@ const FormWrapper = styled.form`
   margin-bottom: 1rem;
   padding: .5rem;
   border: none;
-  background: ${styles.colors.lightGrey};
+  background: ${styles.colors.lightGrey};;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   width: 100%;
 }
 .e-mail{
@@ -250,6 +259,7 @@ const FormWrapper = styled.form`
 
 .plane{
   margin-left: .5rem;
+  font-size: 1.1rem;
 }
 
 .check{
@@ -258,8 +268,9 @@ const FormWrapper = styled.form`
 }
 
 .submit{
-  color: ${styles.colors.mainBlack};
-    border: .1rem ${styles.colors.mainBlack} solid;
+  color: ${styles.colors.green};
+    border: .1rem #ddd solid;
+    border-radius: 5px;
     width:50%;
     padding: .25rem;
     font-size: .8rem;
@@ -267,8 +278,8 @@ const FormWrapper = styled.form`
 
     &:hover{
         cursor:pointer;
-        background-color: ${styles.colors.mainBlack};
-        color: ${styles.colors.primaryColor};
+        background-color: ${styles.colors.mainWhite};
+        color: ${styles.colors.green};
     }
     &:disabled{
       color: ${styles.colors.mainBlack};

@@ -20,7 +20,7 @@ text-align:center;
     color:${styles.colors.mainWhite};
     font-size: 2.4rem;
     text-transform:capitalize;
-    ${styles.textSlanted}
+    ${styles.textMonoSpace}
 }
 .subtitle{
     color:${styles.colors.mainWhite};

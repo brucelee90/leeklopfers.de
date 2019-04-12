@@ -1,38 +1,38 @@
 import React, { Component } from "react"
 import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
-import Img from "gatsby"
 import { FaSearch, FaGithub } from "react-icons/fa"
+import restaurantPic from '../../images/ProjectImages/Restaurant.jpg'
+import ecommercePic from '../../images/ProjectImages/Ecommerce.jpeg'
+import recipesPic from '../../images/ProjectImages/Recipes.jpeg'
+
 
 export default class Projects extends Component {
   state = {
     projects: [
       {
         id: 1,
-        name: "restaurant",
+        name: "restaurant Seite",
         link: "https://lees-restaurant.netlify.com/",
-        github: "https://github.com/brucelee90",
-        img:
-          "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg",
-        frameworks: ["react", "bootstrap"],
+        github: "https://github.com/brucelee90/lees-restaurant",
+        img: restaurantPic,
+        frameworks: ["react", "gatsby", "contentful"],
       },
       {
         id: 2,
-        name: "real-estate",
-        link: "lees-restaurant.netlify.com",
-        github: "https://github.com/brucelee90",
-        img:
-          "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg",
-        frameworks: ["react", "bootstrap"],
+        name: "E-Commerce Seite",
+        link: "https://lees-ecommerce.netlify.com",
+        github: "https://github.com/brucelee90/ecommerce",
+        img: ecommercePic,
+        frameworks: ["react", "material design bootstrap"],
       },
       {
         id: 3,
-        name: "todo",
-        link: "lees-restaurant.netlify.com",
-        github: "https://github.com/brucelee90",
-        img:
-          "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg",
-        frameworks: ["react", "bootstrap"],
+        name: "Rezepte Seite",
+        link: "https://your-favourite-recipes.netlify.com/",
+        github: "https://github.com/brucelee90/recipe-app",
+        img: recipesPic,
+        frameworks: ["react", "bootstrap", "Food2Fork - API"],
       },
     ],
   }
@@ -40,7 +40,7 @@ export default class Projects extends Component {
   render() {
     return (
       <>
-      <Section>
+      <Section id="portfolio">
         <Title title="und das sind" subtitle="meine Projekte" />
         <ProjectWrapper>
           {this.state.projects.map(item => {
@@ -61,7 +61,7 @@ export default class Projects extends Component {
                     </div>
 
                     <div className="project-info">
-                      Frameworks:<br />
+                      
                       <ul>
                         {item.frameworks.map(fw => {
                           return <li>{fw}</li>
@@ -101,11 +101,20 @@ const ProjectWrapper = styled.div`
     }
     @media(min-width:768px){
         grid-template-columns: repeat(3, 1fr);
+
     }
 
   .project {
     position: relative;
     color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 150ms linear;
+
+    &:hover{
+      ${styles.boxShadow}
+      transform: scale(1.01, 1.01);
+    }
 
     .info {
       opacity: 0;
@@ -127,6 +136,15 @@ const ProjectWrapper = styled.div`
           text-transform: capitalize;
           margin-bottom: 2rem;
           font-size: 2rem;
+
+          @media(min-width:768px){
+            font-size: 1.4rem;
+          }
+          @media(min-width:968px){
+            font-size: 2rem;
+          }
+
+
         }
         .link {
           text-align: center;

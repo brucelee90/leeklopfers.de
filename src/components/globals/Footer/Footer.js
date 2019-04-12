@@ -27,7 +27,7 @@ export default class Footer extends Component {
     return (
       <FooterWrapper>
         <div className="title">
-          LEE'S INN
+          leevincent.de
         </div>
         <div className="icons">
           {this.state.icons.map(item => (
@@ -41,7 +41,7 @@ export default class Footer extends Component {
           ))}
         </div>
         <p className="copyright">
-          copyright &copy; 2019 LEE'S INN
+          copyright &copy; 2019 Lee Klopfers
         </p>
       </FooterWrapper>
     )
@@ -82,7 +82,7 @@ const FooterWrapper = styled.footer `
     letter-spacing: .15rem;
     text-align: center;
     color: ${styles.colors.mainWhite};
-    width: 10rem;
+    width: 14rem;
     text-transform: uppercase;
     padding: 0.8rem 1rem .6rem 1rem;
     margin: 0 auto 2rem auto;

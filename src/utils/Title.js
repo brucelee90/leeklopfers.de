@@ -22,13 +22,19 @@ Title.defaultProps = {
 }
 
 const TitleWrapper = styled.div `
-margin: 5rem;
+width: 100%;
+margin: 5rem auto;
 text-align: center;
+padding: 1rem;
+
 .title{
-    ${styles.textSlanted};
+    /* ${styles.textMonoSpace}; */
+    
     ${styles.letterSpacing({spacing:'.1rem'})};
     font-size: 2rem;
-    color:${styles.colors.primaryColor}
+    color:${styles.colors.primaryColor};
+    font-size: 100;
+    text-transform: capitalize;
 }
 .subtitle{
     ${styles.letterSpacing({spacing:'.1rem'})};

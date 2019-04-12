@@ -2,17 +2,34 @@ export const colors = {
     mainBlack: `#262626`,
     mainWhite: `#fff`,
     mainGrey: `#aaa`,
-    lightGrey: `#eee`,
+    lightGrey: `#f9f9f9`,
+
+    // FArben für Programmcode
+    darkerOrange: '#771702',
+    darkOrange:'#D84208',
+    Orange:'#F4750E',
+    yellow:'#F2A30E',
+    green:'#49722A',
+    secondGreen: '#8AD1A5',
+
+    // Hauptfarben
     primaryRGBA: `rgb(210, 170, 92, 0.3)`,
-    primaryColor: `#d2aa5c`,
-    primaryColorHover: `#ad7913`,
+    primaryColor: `#F4750E`,
     secondaryColor: `#F2AF29`,
     thirdColor: `#474747`,
-    danger: `red`,
-    success: 'green'
+    danger: `#D84208`,
+    success: '#49722A'
     
     }
+
+export const boxShadow = `
+-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+`
+
 export const textSlanted = `font-family: 'Arizonia', cursive;`
+export const textMonoSpace = `font-family:"Courier", "Monospace"`
 // export const logoFont = `font-family: 'Mr Dafoe';`
 export const logoFont = `font-family: 'Arizonia', cursive;`
 

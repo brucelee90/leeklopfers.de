@@ -13,7 +13,7 @@ export default class NavbarHeader extends Component {
       <HeaderWrapper>
         <Link style={{textDecoration:'none'}} to="/">
           <Logo>
-              Lee Klopfers
+            &#60;LeeVincent&#47;&#62;
           </Logo>
         </Link>
         <FaBars
@@ -28,12 +28,14 @@ export default class NavbarHeader extends Component {
 }
 
 const HeaderWrapper = styled.div`
-  padding: 0.4rem 0.4rem;
+  padding: 1.5rem 0.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   .toggle-icon {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    margin: 0;
+
     cursor: pointer;
     color: ${styles.colors.primaryColor};
   }
@@ -44,8 +46,8 @@ const HeaderWrapper = styled.div`
   }
 `
 const Logo = styled.div`
-color:${styles.colors.primaryColor};
-${styles.logoFont};
-font-size:2rem;
-text-decoration: none;
+  color:${styles.colors.primaryColor};
+  ${styles.textMonoSpace};
+  font-size:1.5rem;
+  text-decoration: none;
 `

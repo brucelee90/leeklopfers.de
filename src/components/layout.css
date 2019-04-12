@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Kaushan+Script');
 @import url('https://fonts.googleapis.com/css?family=Arizonia|Mr+Dafoe');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
 
 *{
   margin:0;
@@ -8,7 +9,7 @@
 }
 
 body{
-  font-family:'Josefin Sans', sans-serif;
+  font-family:'Quicksand', sans-serif;
 }
 
 :root{

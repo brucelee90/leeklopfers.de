@@ -4,6 +4,7 @@ import NavbarIcons from "./NavbarIcons"
 import NavbarLinks from "./NavbarLinks"
 import styled from 'styled-components'
 import {Section} from '../../../utils'
+import Scrollspy from 'react-scrollspy'
 
 export default class Navbar extends Component {
     state={
@@ -28,7 +29,7 @@ export default class Navbar extends Component {
 }
 
 const NavWrapper = styled.nav`
-padding: 0 2rem;
+padding: 0 .6rem;
 
 @media (min-width:768px){
     display:flex;
