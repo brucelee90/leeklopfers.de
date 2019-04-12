@@ -41,7 +41,7 @@ export default class NavbarLinks extends Component {
             return(
               // Für map() Methode braucht jedes Tag einen key.
               // key ist immer die id
-              <Scrollspy key={item.id}>
+              // <Scrollspy key={item.id}>
               <li >
                 <Link to={item.path} className="nav-link">
                 {/* <a href="#about" className="nav-link"> */}
@@ -49,7 +49,7 @@ export default class NavbarLinks extends Component {
                 {/* </a> */}
                 </Link>
               </li>
-              </Scrollspy>
+              // </Scrollspy>
             )
           })
         }
@@ -101,7 +101,7 @@ li{
 
 height: ${props => (props.open?'160px':'0px')};
 overflow:hidden;
-transition: ${styles.transObject({time:'.3s'})};
+transition: ${styles.transObject({time:'.15s'})};
 
 @media (min-width:768px){
   height:auto;
