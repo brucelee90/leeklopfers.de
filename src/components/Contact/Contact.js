@@ -149,8 +149,8 @@ export default class Contact extends React.Component {
             </label>
           </p>
 
-          <p>
-            <lable>
+          <div>
+            <label>
               <div 
               className={'title ' + (this.state.formErrors.name.length > 0 && 'error')}>
               
@@ -165,10 +165,10 @@ export default class Contact extends React.Component {
               onChange={this.handleChange}
               
               />
-            </lable>
-          </p>
-          <p>
-            <lable>
+            </label>
+          </div>
+          <div>
+            <label>
             <div className={'title ' + (this.state.formErrors.email.length > 0 && 'error')}>
                 E-Mail {this.state.formErrors.email}
               </div>
@@ -178,10 +178,10 @@ export default class Contact extends React.Component {
               type="email" 
               name="email" 
               onChange={this.handleChange} />
-            </lable>
-          </p>
-          <p>
-            <lable>
+            </label>
+          </div>
+          <div>
+            <label>
               <div 
               className={'title ' + (this.state.formErrors.message.length > 0 && 'error')}>
                 Nachricht {this.state.formErrors.message}
@@ -192,9 +192,9 @@ export default class Contact extends React.Component {
               name="message" 
               rows="15"
               onChange={this.handleChange} />
-            </lable>
-          </p>
-          <p>
+            </label>
+          </div>
+          <div>
             <button
             className="submit"
             disabled={this.state.disabled} 
@@ -205,7 +205,7 @@ export default class Contact extends React.Component {
               : <FaPaperPlane className="plane"/>
             }
             </button>
-          </p>
+          </div>
         </FormWrapper>
       </Section>
     );

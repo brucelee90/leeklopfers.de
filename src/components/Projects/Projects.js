@@ -45,7 +45,9 @@ export default class Projects extends Component {
         <ProjectWrapper>
           {this.state.projects.map(item => {
             return (
-              <div className="project">
+              <div 
+              key={item.id}
+              className="project">
                 <img src={item.img} alt="project" />
                 <div className="info">
                   <div className="project-container">
@@ -63,8 +65,8 @@ export default class Projects extends Component {
                     <div className="project-info">
                       
                       <ul>
-                        {item.frameworks.map(fw => {
-                          return <li>{fw}</li>
+                        {item.frameworks.map((fw, index) => {
+                          return <li key={index}>{fw}</li>
                         })}
                       </ul>
                     </div>

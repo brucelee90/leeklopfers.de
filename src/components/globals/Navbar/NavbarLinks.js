@@ -41,8 +41,8 @@ export default class NavbarLinks extends Component {
             return(
               // Für map() Methode braucht jedes Tag einen key.
               // key ist immer die id
-              <Scrollspy>
-              <li key={item.id}>
+              <Scrollspy key={item.id}>
+              <li >
                 <Link to={item.path} className="nav-link">
                 {/* <a href="#about" className="nav-link"> */}
                   {item.name}
