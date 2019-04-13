@@ -11,28 +11,35 @@ export default class NavbarHeader extends Component {
     const {handleNavbar} = this.props
     return (
       <HeaderWrapper>
-        <Link to="/">
-          <img style={{width:'8.2rem'}} src={logo2} alt="name" />
+        {/*
+        <Link style={{textDecoration:'none'}} to="#">
+          <Logo>
+            &#60;LeeVincent&#47;&#62;
+          </Logo>
         </Link>
+        */}
         <FaBars
           className="toggle-icon"
           onClick={() => {
             handleNavbar()
           }}
         />
+
+        
       </HeaderWrapper>
     )
   }
 }
 
-
 const HeaderWrapper = styled.div`
-  padding: 0.4rem 0.4rem;
+  padding: 1.5rem 0.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   .toggle-icon {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    margin: 0;
+
     cursor: pointer;
     color: ${styles.colors.primaryColor};
   }
@@ -41,4 +48,10 @@ const HeaderWrapper = styled.div`
       display: none;
     }
   }
+`
+const Logo = styled.div`
+  color:${styles.colors.primaryColor};
+  ${styles.textMonoSpace};
+  font-size:1.5rem;
+  text-decoration: none;
 `
