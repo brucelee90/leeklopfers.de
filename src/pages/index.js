@@ -9,13 +9,12 @@ import {Header, Banner, BannerButton} from '../utils'
 import Projects from '../components/Projects/Projects'
 import About from '../components/About/About'
 import Contact from '../components/Contact/Contact'
-import HeaderText from '../components/HeaderText'
+// import HeaderText from '../components/HeaderText'
 
 
 const IndexPage = () => (
   <Layout>
-    {/* <Header img={img}> */}
-    <Header >
+    <Header img={img}>
       {/* <HeaderText/> */}
     </Header>
     {/* <About/>
