@@ -18,12 +18,15 @@ export default class NavbarHeader extends Component {
           </Logo>
         </Link>
        
+       <div className="toggle-wrapper">
         <FaBars
           className="toggle-icon"
           onClick={() => {
             handleNavbar()
           }}
         />
+
+        </div>
 
         
       </HeaderWrapper>
@@ -36,20 +39,29 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .toggle-icon {
-    font-size: 1.5rem;
-    margin: 0;
-    border: 1px solid #bbb;
-    border-radius: 50%
 
+  .toggle-wrapper{
+
+    padding: .1rem .3rem;
+    border: 1px solid #bbb;
+    border-radius: 50%;
     cursor: pointer;
     color: ${styles.colors.primaryColor};
-  }
-  @media (min-width: 768px) {
+
     .toggle-icon {
-      display: none;
+    font-size: 1.5rem;
+    margin-top: .25rem;
+    padding: 0;
+    
     }
+    @media (min-width: 768px) {
+      .toggle-icon {
+        display: none;
+      }
+    }
+
   }
+
 `
 const Logo = styled.div`
   color:${styles.colors.primaryColor};
