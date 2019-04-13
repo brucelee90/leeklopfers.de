@@ -14,7 +14,8 @@ import HeaderText from '../components/HeaderText'
 
 const IndexPage = () => (
   <Layout>
-    <Header img={img}>
+    {/* <Header img={img}> */}
+    <Header >
       {/* <HeaderText/> */}
     </Header>
     {/* <About/>
