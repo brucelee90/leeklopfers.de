@@ -3,30 +3,31 @@ import styled from "styled-components"
 import {Link} from 'gatsby'
 import { styles } from '../../../utils'
 import NavbarIcons from "./NavbarIcons"
+// import Scrollspy from 'react-scrollspy'
 
 export default class NavbarLinks extends Component {
   state={
     links:[
       {
         id:0,
-        path:'/',
+        path:'#',
         name:'home'
       },
       {
         id: 1,
-        path: '/about',
-        name: 'über'
+        path: '#portfolio',
+        name: 'portfolio'
       },
       {
         id: 2,
-        path: '/menu',
-        name: 'karte'
+        path: '#about',
+        name: 'über mich'
       },
       {
         id: 3,
-        path: '/contact',
-        name: 'reservieren'
-      }
+        path: '#contact',
+        name: 'Kontakt'
+      },
     ]
   }
 
@@ -40,14 +41,15 @@ export default class NavbarLinks extends Component {
             return(
               // Für map() Methode braucht jedes Tag einen key.
               // key ist immer die id
-              <li key={item.id}>
+              // <Scrollspy key={item.id}>
+              <li >
                 <Link to={item.path} className="nav-link">
-                  <LinkBorder>
-                    {item.name}
-                  </LinkBorder>
-                  <div className="underline"></div>
+                {/* <a href="#about" className="nav-link"> */}
+                  {item.name}
+                {/* </a> */}
                 </Link>
               </li>
+              // </Scrollspy>
             )
           })
         }
@@ -60,56 +62,62 @@ const LinkWrapper = styled.ul`
 li{
   list-style-type: none;
   text-decoration: none;
-  min-width:5rem; */
+  min-width:5rem;
+  text-transform: capitalize;
+  text-align: center;
 }
+
 .nav-link{
   display:block;
   text-decoration: none;
   padding: .3rem .7rem;
   color:${styles.colors.thirdColor};
   font-weight: 300;
-  font-size: 1.1rem;
-  cursor:default;
+  font-size: 1rem;
+  cursor:pointer;
+  /* margin:.3rem; */
+  transition: transform 500ms ease-in-out;
+}
+@media (max-width:767px){
+
+  .nav-link:before{
+    display:inline-block;
+    content: '';
+    border-color: ${styles.colors.primaryColor};
+    border-style: solid;
+    border-width: 0 0 0 3px;
+    height: 1rem;
+    /* transform: scaleX(0); */
+    transform: scaleY(0);
+    transition: transform 250ms ease-in-out;
+    margin-right: .3rem;
+  }
+  .nav-link:hover:before{
+    /* transform: scaleX(1); */
+    transform: scaleY(1.5);
+  }
 }
 
-height: ${props => (props.open?'152px':'0px')};
+
+height: ${props => (props.open?'160px':'0px')};
 overflow:hidden;
-transition: ${styles.transObject({time:'.3s'})};
+transition: ${styles.transObject({time:'.15s'})};
+
 @media (min-width:768px){
   height:auto;
   display:flex;
   margin: auto;
-}
 
-`
-
-const LinkBorder = styled.div`
-
-  text-transform: capitalize;
-  background:
-  linear-gradient(
-    to bottom, ${styles.colors.primaryColor} 0%,
-    ${styles.colors.primaryColor} 100%
-  );
-  background-position: left bottom;
-  background-repeat: repeat-x;
-  background-size: 2px .4rem;
-  color: #000;
-  text-decoration: none;
-  transition: ${styles.transDefault};
-  width:1.5rem;
-  overflow: visible;
-  @media (min-width:768px){
-    width:25%;
+  .nav-link:after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px ${styles.colors.primaryColor};
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
   }
-  
 
-  &:hover{
-    @media (min-width:768px){
-    width:100%;
-    }
-    width:6rem;
-    cursor:pointer;
+  .nav-link:hover:after { 
+    transform: scaleX(1); 
   }
 }
 `
