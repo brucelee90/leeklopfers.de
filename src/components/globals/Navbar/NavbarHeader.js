@@ -9,16 +9,17 @@ import {styles} from '../../../utils'
 export default class NavbarHeader extends Component {
   render() {
     const {handleNavbar} = this.props
+    
     return (
       <HeaderWrapper>
         
         <Link style={{textDecoration:'none'}} to="/">
           <Logo>
-            &#60;LeeVincent&#47;&#62;
+            <span style={{color:'black'}}>&#60;</span>LeeVincent<span style={{color:'black'}} >&#47;&#62;</span>
           </Logo>
         </Link>
        
-       <div className="toggle-wrapper">
+       {/* <div className="toggle-wrapper"> */}
         <FaBars
           className="toggle-icon"
           onClick={() => {
@@ -26,7 +27,7 @@ export default class NavbarHeader extends Component {
           }}
         />
 
-        </div>
+        {/* </div> */}
 
         
       </HeaderWrapper>
@@ -40,27 +41,22 @@ const HeaderWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  .toggle-wrapper{
-
-    padding: .1rem .3rem;
-    border: 1px solid #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    color: ${styles.colors.primaryColor};
 
     .toggle-icon {
-    font-size: 1.5rem;
-    margin-top: .25rem;
-    padding: 0;
-    
+      font-size: 1.5rem;
+      margin-top: .25rem;
+      padding: 0;
+      cursor: pointer;
+      /* color: ${styles.colors.primaryColor}; */
     }
+    
     @media (min-width: 768px) {
       .toggle-icon {
         display: none;
       }
     }
 
-  }
+  
 
 `
 const Logo = styled.div`

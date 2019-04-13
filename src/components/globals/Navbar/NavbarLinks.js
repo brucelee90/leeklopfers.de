@@ -96,7 +96,6 @@ li{
   }
 }
 
-
 height: ${props => (props.open?'160px':'0px')};
 overflow:hidden;
 transition: ${styles.transObject({time:'.15s'})};

@@ -16,6 +16,7 @@ const IndexPage = () => (
   <Layout>
     <Header img={img}>
       {/* <HeaderText/> */}
+      <Banner title="<Willkommen/>" subtitle="Mein name ist Lee"/>
     </Header>
     <About/>
     <Projects/>

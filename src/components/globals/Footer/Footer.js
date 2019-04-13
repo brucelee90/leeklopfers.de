@@ -96,8 +96,4 @@ const FooterWrapper = styled.footer `
     margin: 0 auto 2rem auto;
     font-size: 1.2rem;
     ${styles.border({color: `${styles.colors.green}`})};
-
-    
-
-    
 `
