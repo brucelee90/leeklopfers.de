@@ -17,9 +17,9 @@ const IndexPage = () => (
     <Header img={img}>
       {/* <HeaderText/> */}
     </Header>
-    {/* <About/>
+    <About/>
     <Projects/>
-    <Contact/> */}
+    <Contact/>
   </Layout>
 )
 

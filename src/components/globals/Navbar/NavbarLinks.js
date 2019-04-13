@@ -3,7 +3,7 @@ import styled from "styled-components"
 import {Link} from 'gatsby'
 import { styles } from '../../../utils'
 import NavbarIcons from "./NavbarIcons"
-// import Scrollspy from 'react-scrollspy'
+import Scrollspy from 'react-scrollspy'
 
 export default class NavbarLinks extends Component {
   state={
@@ -41,15 +41,13 @@ export default class NavbarLinks extends Component {
             return(
               // Für map() Methode braucht jedes Tag einen key.
               // key ist immer die id
-              // <Scrollspy key={item.id}>
+              <Scrollspy key={item.id}>
               <li >
                 <Link to={item.path} className="nav-link">
-                {/* <a href="#about" className="nav-link"> */}
                   {item.name}
-                {/* </a> */}
                 </Link>
               </li>
-              // </Scrollspy>
+              </Scrollspy>
             )
           })
         }

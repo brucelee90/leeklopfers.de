@@ -27,7 +27,9 @@ export default class Footer extends Component {
     return (
       <FooterWrapper>
         <div className="title">
+          <p>
           leevincent.de
+          </p>
         </div>
         <div className="icons">
           {this.state.icons.map(item => (
@@ -50,7 +52,7 @@ export default class Footer extends Component {
 
 const FooterWrapper = styled.footer `
   padding: 2rem 0;
-  background: ${styles.colors.mainBlack};
+  background: ${styles.colors.lightGrey};
   
   .icons{
     width: 10rem;
@@ -63,7 +65,7 @@ const FooterWrapper = styled.footer `
     @media(min-width: 768px){
     display:none;
     }
-    color: ${styles.colors.mainWhite};
+    color: ${styles.colors.mainBlack};
 
     &:hover{
       color: ${styles.colors.primaryColor};
@@ -71,22 +73,31 @@ const FooterWrapper = styled.footer `
       cursor:pointer;
       }
     }
-  }
+  
   .copyright{
-    color: ${styles.colors.mainWhite};
+    color: ${styles.colors.mainBlack};
     text-transform: capitalize;
     text-align: center;
     margin: 1rem 0;
   }
+
   .title{
     letter-spacing: .15rem;
     text-align: center;
-    color: ${styles.colors.mainWhite};
-    width: 14rem;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+    color: ${styles.colors.mainBlack};
+    width: 11.5rem;
+    border-radius:5px;
     text-transform: uppercase;
     padding: 0.8rem 1rem .6rem 1rem;
     margin: 0 auto 2rem auto;
     font-size: 1.2rem;
-    ${styles.border({color: `${styles.colors.mainWhite}`})
-    }
+    ${styles.border({color: `${styles.colors.green}`})};
+
+    
+
+    
 `
