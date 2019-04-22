@@ -15,7 +15,7 @@ export default function AboutPage() {
             Meine Reise als Web-Entwickler
         </h3>
         <p>
-            Vor knapp zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht und habe bereits verschiedene Frameworks kennengelernt.
+            Vor knapp zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht und habe bereits verschiedene Frameworks, wie zum Beispiel React, Gatsby oder Bootstrap kennengelernt. Ich habe Erfahrung im Umgang mit REST APIs gesammelt. Zudem habe ich mich sehr dem Responisve Design vertraut. 
         </p>
         <p>
             Bei dem Meer an Informationen, die für jeden im Internet bereit stehen, habe ich mich stundenlang durch die Untiefen von Google gekämpft, um an die Lösung zu gelangen, die mir bei meinem Problem weiterhelfen kann.
