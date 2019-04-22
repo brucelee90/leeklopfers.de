@@ -4,13 +4,29 @@ export const colors = {
     mainGrey: `#aaa`,
     lightGrey: `#f9f9f9`,
 
-    // FArben für Programmcode
+    // Farben für Programmcode
     darkerOrange: '#771702',
     darkOrange:'#D84208',
     Orange:'#F4750E',
     yellow:'#F2A30E',
     green:'#49722A',
     secondGreen: '#8AD1A5',
+
+    // Gradients
+    darkerOrangeGradient: '#771702',
+    darkOrangeGradient:'#D84208',
+
+
+
+    OrangeGradient:`#F4750E`,
+
+
+
+
+    yellowGradient:'#F2A30E',
+    greenGradient:'#49722A',
+    secondGreenGradient: '#8AD1A5',
+
 
     // Hauptfarben
     primaryRGBA: `rgb(210, 170, 92, 0.3)`,

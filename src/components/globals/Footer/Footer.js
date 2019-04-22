@@ -28,7 +28,7 @@ export default class Footer extends Component {
       <FooterWrapper>
         <div className="title">
           <p>
-          leevincent.de
+          leeklopfers.de
           </p>
         </div>
         <div className="icons">
@@ -89,7 +89,7 @@ const FooterWrapper = styled.footer `
   justify-content: center;
 
     color: ${styles.colors.mainBlack};
-    width: 11.5rem;
+    width: 13rem;
     border-radius:5px;
     text-transform: uppercase;
     padding: 0.8rem 1rem .6rem 1rem;

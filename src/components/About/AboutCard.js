@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import {styles} from '../../utils'
+import {Link} from 'gatsby'
 
-export default function AboutList({ img, text }) {
+export default function AboutList({ img, text, ueberschrift }) {
   return (
     <AboutListWrapper>
         <div className="thumbnail" style={{ background: `url(${img}) center` }}/>
@@ -13,9 +14,15 @@ export default function AboutList({ img, text }) {
 
         <div className="about-text">
           <div>
-            <h3>Lorem, ipsum dolor.</h3>
+            <h3>{ueberschrift}</h3>
             <p>
               {text}
+              
+              <LinkWrapper>
+                <Link to='/about' className="nav-link" className='link'>
+                  [...mehr]
+                </Link>
+              </LinkWrapper>
             </p>
           </div>
         </div>
@@ -54,4 +61,18 @@ const AboutListWrapper = styled.div`
     }
       
   }
+`
+const LinkWrapper = styled(Link)`
+text-decoration:none;
+
+.link{
+  color: black;
+  text-decoration: none;
+  padding: .3rem .7rem;
+  color:${styles.colors.thirdColor};
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+
 `

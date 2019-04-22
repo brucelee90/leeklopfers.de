@@ -9,19 +9,30 @@ import {Header, Banner, BannerButton} from '../utils'
 import Projects from '../components/Projects/Projects'
 import About from '../components/About/About'
 import Contact from '../components/Contact/Contact'
-// import HeaderText from '../components/HeaderText'
+import Lebenslauf from '../components/Lebenslauf/Lebenslauf'
+// import React from "react"
+import { Helmet } from "react-helmet"
+
 
 
 const IndexPage = () => (
+
   <Layout>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Lee Klopfers - Frontend Entwickler</title>
+          <link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+        </Helmet>
+
     <Header img={img}>
-      {/* <HeaderText/> */}
-      <Banner title="<Willkommen/>" subtitle="Mein name ist Lee"/>
+      <Banner title="Willkommen" subtitle="Mein name ist Lee"/>
     </Header>
     <About/>
     <Projects/>
     <Contact/>
+
   </Layout>
+  
 )
 
 export default IndexPage

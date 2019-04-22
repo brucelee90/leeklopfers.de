@@ -15,7 +15,7 @@ export default class NavbarHeader extends Component {
         
         <Link style={{textDecoration:'none'}} to="/">
           <Logo>
-            <span style={{color:'black'}}>&#60;</span>LeeVincent<span style={{color:'black'}} >&#47;&#62;</span>
+            <span style={{color:'black'}}>&#60;</span>LeeKlopfers<span style={{color:'black'}} >&#47;&#62;</span>
           </Logo>
         </Link>
        

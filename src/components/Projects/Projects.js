@@ -5,6 +5,7 @@ import { FaSearch, FaGithub } from "react-icons/fa"
 import restaurantPic from '../../images/ProjectImages/Restaurant.jpg'
 import ecommercePic from '../../images/ProjectImages/Ecommerce.jpeg'
 import recipesPic from '../../images/ProjectImages/Recipes.jpeg'
+import realEstatePic from '../../images/ProjectImages/realestate.jpeg'
 
 
 export default class Projects extends Component {
@@ -12,7 +13,7 @@ export default class Projects extends Component {
     projects: [
       {
         id: 1,
-        name: "restaurant Seite",
+        name: "Lee's Restaurant",
         link: "https://lees-restaurant.netlify.com/",
         github: "https://github.com/brucelee90/lees-restaurant",
         img: restaurantPic,
@@ -20,7 +21,7 @@ export default class Projects extends Component {
       },
       {
         id: 2,
-        name: "E-Commerce Seite",
+        name: "E-Commerce",
         link: "https://lees-ecommerce.netlify.com",
         github: "https://github.com/brucelee90/ecommerce",
         img: ecommercePic,
@@ -28,12 +29,20 @@ export default class Projects extends Component {
       },
       {
         id: 3,
-        name: "Rezepte Seite",
+        name: "Rezepte Suchen",
         link: "https://your-favourite-recipes.netlify.com/",
         github: "https://github.com/brucelee90/recipe-app",
         img: recipesPic,
         frameworks: ["react", "bootstrap", "Food2Fork - API"],
       },
+      {
+        id:4,
+        name: 'Immobilien finden',
+        link:'https://lees-real-estate.netlify.com/',
+        github:'https://github.com/brucelee90/lees-real-estate',
+        img: realEstatePic,
+        frameworks: ["react"],
+      }
     ],
   }
 

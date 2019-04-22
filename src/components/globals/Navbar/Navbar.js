@@ -32,6 +32,7 @@ export default class Navbar extends Component {
 }
 
 const NavWrapper = styled.nav`
+
 padding: 0 .6rem;
 
 @media (min-width:768px){

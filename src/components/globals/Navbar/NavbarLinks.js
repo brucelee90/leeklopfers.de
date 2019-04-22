@@ -28,6 +28,11 @@ export default class NavbarLinks extends Component {
         path: '#contact',
         name: 'Kontakt'
       },
+      {
+        id: 4,
+        path: '/lebenslauf',
+        name: 'Lebenslauf'
+      },
     ]
   }
 
@@ -96,7 +101,7 @@ li{
   }
 }
 
-height: ${props => (props.open?'160px':'0px')};
+height: ${props => (props.open?'10rem':'0px')};
 overflow:hidden;
 transition: ${styles.transObject({time:'.15s'})};
 
