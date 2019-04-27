@@ -13,7 +13,6 @@ export default class Navbar extends Component {
     // Methode zum öffnen und schließen der Navbar
     handleNavbar = () =>{
         this.setState(()=>{
-            console.log(this.state.navbarOpen);
             return{navbarOpen:!this.state.navbarOpen}
             
             

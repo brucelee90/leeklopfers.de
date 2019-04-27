@@ -16,7 +16,7 @@ export default function HauptSection() {
             <span style={{ fontWeight: "bold" }}>IT-Berater</span>
             <ul>
               <li>Beratung bei Projekten in Patentanwaltskanzleien</li>
-              <li>Fachlise Analyse der Problemstellungen</li>
+              <li>Fachliche Analyse der Problemstellungen</li>
               <li>Planung und Konzeptionierung von Lösungen</li>
             </ul>
           </div>
@@ -33,7 +33,7 @@ export default function HauptSection() {
               <li>Forderungsmanagement und Mahnwesen</li>
               <li>Verbuchung von Kundenrechnungen</li>
               <li>Monatsabschluss</li>
-              <li>Erstellung von Statistiken mit Excelsabschluss</li>
+              <li>Erstellung von Statistiken mit Excel</li>
             </ul>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function HauptSection() {
           </div>
         </div>
         <div className="columns">
-          <div className="zeitraum">04/2012 - 04/2013</div>
+          <div className="zeitraum">04/2012 - 09/2013</div>
           <div className="taetigkeit">
             Universität Frankfurt
             <br />
@@ -133,8 +133,9 @@ export default function HauptSection() {
           <div className="taetigkeit">
             <ul style={{ marginTop: "0" }}>
               <li>HTML5</li>
-              <li>CSS3</li>
+              <li>CSS3/ Sass</li>
               <li>ReactJS</li>
+              <li>Bootstrap</li>
             </ul>
           </div>
           <div className="zeitraum">Office-Programme</div>

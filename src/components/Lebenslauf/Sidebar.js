@@ -6,7 +6,6 @@ import {Link} from 'gatsby'
 import img from '../../images/LeeKlopfers.png'
 
 export default function Sidebar({ infos }) {
-  console.log(infos)
 
   return (
     <SidebarWrapper>

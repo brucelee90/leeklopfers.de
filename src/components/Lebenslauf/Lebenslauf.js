@@ -26,7 +26,8 @@ ${styles.boxShadow}
 /* background: #ccc; */
 display: grid;
 grid-template-columns: 1fr 3fr;
-max-width: 2480;
+max-width: 1280px;
+margin: auto;
 
 .ueberschrift{
   font-size: 1.2rem;

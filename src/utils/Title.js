@@ -23,9 +23,10 @@ Title.defaultProps = {
 
 const TitleWrapper = styled.div `
 width: 100%;
-margin: 2rem auto;
+margin: 0rem auto;
 text-align: center;
-padding: 1rem;
+padding-top: 0rem;
+padding-bottom: 3rem;
 
 .title{
     /* ${styles.textMonoSpace}; */

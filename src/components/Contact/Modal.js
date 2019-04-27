@@ -16,7 +16,6 @@ export default class Modal extends Component {
 
   render() {
     const modal = this.props.openModal
-    // console.log('modal:', modal);
 
     return (
       <ModalWrapper>

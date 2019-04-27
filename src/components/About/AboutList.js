@@ -2,16 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import {styles} from '../../utils'
 import {Link} from 'gatsby'
+import Img from "gatsby-image"
 
 export default function AboutList({ img, text, ueberschrift }) {
   return (
     <AboutListWrapper>
-        <div className="thumbnail" style={{ background: `url(${img}) -7rem` }}/>
-        {/* <img
-          src={img}
-          alt=""
-        /> */}
-
+        <Img fluid={img} className="thumbnail"/>
         <div className="about-text">
           <div>
           <h3>{ueberschrift}</h3>
@@ -39,7 +35,7 @@ const AboutListWrapper = styled.div`
   grid-template-columns: 1fr 2fr;
 
   display: grid;
-  @media (max-width: 576px) {
+  @media (max-width: 575px) {
     display: none;
   }
 
@@ -67,6 +63,4 @@ text-decoration:none;
   font-weight: 300;
   font-size: 1rem;
 }
-
-
 `

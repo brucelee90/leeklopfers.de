@@ -4,12 +4,14 @@ import Banner from './Banner'
 import { BannerButton, SectionButton } from './Button'
 import { Section } from './Section'
 import { Title } from './Title'
+import Parallax from './Parallax'
+
 export {
     styles,
     Header,
     Banner,
     BannerButton,
-    // PageHeader,
+    Parallax,
     Section,
     Title,
     SectionButton,

@@ -90,10 +90,11 @@ const FooterWrapper = styled.footer `
 
     color: ${styles.colors.mainBlack};
     width: 13rem;
-    border-radius:5px;
+    /* border-radius:5px; */
     text-transform: uppercase;
     padding: 0.8rem 1rem .6rem 1rem;
     margin: 0 auto 2rem auto;
     font-size: 1.2rem;
-    ${styles.border({color: `${styles.colors.green}`})};
+    /* ${styles.border({color: `${styles.colors.green}`})}; */
+    border-bottom: 1px solid black;
 `

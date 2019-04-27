@@ -3,24 +3,55 @@ import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 import AboutList from "./AboutList"
 import AboutCard from "./AboutCard"
+import img from '../../images/me/Lee.jpeg'
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
+
+const ABOUT_ME_IMG = graphql`
+  {
+    img1: file(relativePath: { eq: "me/Lee.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    img2: file(relativePath: { eq: "me/Lee2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 const text = 'Vor knapp zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht, habe verschiedene Frameworks kennengelernt. Ich habe mich durch die Untiefen von Google gekämpft'
 const uebrschrift = 'Schön Sie kennen zu lernen'
-const img = "https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212?k=6&m=544358212&s=612x612&w=0&h=odURMNz2hty8LIfpVahaaUKpGU4vd-UlZx4jy-OAnJA="
 
-export default class About extends Component {
-  render() {
+const About = () => (
+  <StaticQuery
+  query={ABOUT_ME_IMG}
+  render={data => {
+    const img1 = data.img1.childImageSharp.fluid
+    const img2 = data.img2.childImageSharp.fluid
     return (
       <Section id="about">
-        <Title title="über" subtitle="mich" />
-        <AboutWrapper>
-          <AboutList className='about-list' img={img} ueberschrift={uebrschrift} text={text}/>
-          <AboutCard className='about-card' img={img} ueberschrift={uebrschrift} text={text}/>
-        </AboutWrapper>
-      </Section>
+      <Title title="über" subtitle="mich" />
+      <AboutWrapper>
+        {/* <Img fixed={data.img1.childImageSharp.fluid.src} /> */}
+        <AboutList className='about-list' img={img1} ueberschrift={uebrschrift} text={text}/>
+        <AboutCard className='about-card' img={img2} ueberschrift={uebrschrift} text={text}/>
+      </AboutWrapper>
+    </Section>
     )
-  }
-}
+  }}
+/>
+// }
+)
+
+export default About
 
 const AboutWrapper = styled.div`
 

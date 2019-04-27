@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from '../images/homeBcg.jpeg'
+// import img from '../images/homeBcg.jpeg'
 // import HeaderText from '../components/HeaderText'
 
 function Header({img, children}) {
@@ -8,7 +8,6 @@ function Header({img, children}) {
     <IndexHeader img={img}>
       {children}
     </IndexHeader>
-    
   )
 }
 export {Header}

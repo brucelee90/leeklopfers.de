@@ -2,16 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import {styles} from '../../utils'
 import {Link} from 'gatsby'
+import Img from "gatsby-image"
 
 export default function AboutList({ img, text, ueberschrift }) {
   return (
     <AboutListWrapper>
-        <div className="thumbnail" style={{ background: `url(${img}) center` }}/>
-        {/* <img
-          src={img}
-          alt=""
-        /> */}
-
+        <Img fluid={img} className="thumbnail"/>
+        {/* <div className="thumbnail" style={{ background: `url(${img}) center` }}/> */}
         <div className="about-text">
           <div>
             <h3>{ueberschrift}</h3>

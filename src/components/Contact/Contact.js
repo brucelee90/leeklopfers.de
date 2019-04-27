@@ -49,7 +49,6 @@ export default class Contact extends React.Component {
   handleChange = e => {
     this.setState(
       {[e.target.name]: e.target.value },
-      ()=>console.log()
     )
 
     e.preventDefault()
@@ -80,8 +79,7 @@ export default class Contact extends React.Component {
       }
 
       this.setState(
-        {formErrors, [name]: value},
-        ()=> console.log(this.state)
+        {formErrors, [name]: value}
       )
 
       formValid(this.state.formErrors) === true && this.setState({disabled: false})
@@ -93,11 +91,10 @@ export default class Contact extends React.Component {
     e.preventDefault();
     if (formValid(this.state.formErrors) === true) {
       this.setState(
-        {modalOpen: 'block'}, ()=>console.log(this.state.modalOpen)
+        {modalOpen: 'block'}
         )
     }
 
-    console.log(e);
     resetForm()
 
     fetch("/", {
