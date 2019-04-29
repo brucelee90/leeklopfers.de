@@ -1,25 +1,20 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import {styles} from '../../../utils'
-import {FaInstagram, FaTwitter, FaFacebook} from 'react-icons/fa'
+import {FaInstagram, FaTwitter, FaFacebook, FaLinkedin, FaGithub} from 'react-icons/fa'
 
 export default class Footer extends Component {
   state={
     icons: [
       {
         id:1,
-        icon: <FaFacebook className="icon"/>,
-        path: 'https://www.facebook.com'
+        icon: <FaLinkedin className="icon"/>,
+        path: 'https://www.linkedin.com/in/lee-klopfers-6b9015173/'
       },
       {
         id:2,
-        icon: <FaTwitter className="icon"/>,
-        path: 'https://www.twitter.com'
-      },
-      {
-        id:3,
-        icon: <FaInstagram className="icon"/>,
-        path: 'https://www.instagram.com'
+        icon: <FaGithub className="icon"/>,
+        path: 'https://github.com/brucelee90'
       },
     ]
   }
