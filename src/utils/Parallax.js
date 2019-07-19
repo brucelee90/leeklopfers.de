@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 
 export default function Parallax({ img }) {
-    {console.log(img)}
   return <ParallaxWrapper img={img} ></ParallaxWrapper>
 }
 

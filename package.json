@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "babel-plugin-styled-components": "^1.10.0",
     "bootstrap": "^4.3.1",
     "formik": "^1.5.2",
@@ -16,7 +17,7 @@
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-source-contentful": "^2.0.48",
+    "gatsby-source-contentful": "^2.0.59",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-sharp": "^2.1.17",
     "prop-types": "^15.7.2",

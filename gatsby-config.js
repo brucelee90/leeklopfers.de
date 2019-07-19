@@ -35,7 +35,8 @@ module.exports = {
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: '3058950106cbf20912a6bb606f26418585895887a0412505955c610709334339',
       },
-    }
+    },
+    `@contentful/gatsby-transformer-contentful-richtext`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
