@@ -1,56 +1,36 @@
-// /**
-//  * Implement Gatsby's Node APIs in this file.
-//  *
-//  * See: https://www.gatsbyjs.org/docs/node-apis/
-//  */
+const path = require(`path`)
 
-// // You can delete this file if you're not using it
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
-// const path = require(`path`)
+  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
 
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const blogPost = path.resolve(`src/templates/blog-post-contentful.js`)
-//   // Query for markdown nodes to use in creating pages.
-//   // You can query for whatever data you want to create pages for e.g.
-//   // products, portfolio items, landing pages, etc.
-//   // Variables can be added as the second function parameter
-//   return graphql(`
-//     {
-//         allContentfulBlog{
-//             edges{
-//                 node{
-//                     slug,
-//                     title
-//                 }
-//             }
-//         }
-//     }
-//   `, { limit: 1000 }).then(result => {
-//     if (result.errors) {
-//       throw result.errors
-//     }
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
 
-//     // Create blog post pages.
-//     const posts = result.data.allContentfulBlog.edges
-//     // result.data.allMarkdownRemark.edges.forEach(edge => {
-//     //   createPage({
-//         // Path for this page — required
-//         // path: `${edge.node.frontmatter.slug}`,
-//         // component: blogPost,
-//         // context: {
-//           // Add optional context data to be inserted
-//           // as props into the page component..
-//           //
-//           // The context data can also be used as
-//           // arguments to the page GraphQL query.
-//           //
-//           // The page "path" is always available as a GraphQL
-//           // argument.
-//         },
-//     //   }
-//     // )
-// //     })
-// //   })
-// // 
-//     )
+    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: blogPostTemplate,
+        context: {}, // additional data can be passed via context
+      })
+    })
+  })
+}

@@ -50,7 +50,7 @@ const HeaderWrapper = styled.div`
       /* color: ${styles.colors.primaryColor}; */
     }
     
-    @media (min-width: 768px) {
+    @media (min-width: 840px) {
       .toggle-icon {
         display: none;
       }

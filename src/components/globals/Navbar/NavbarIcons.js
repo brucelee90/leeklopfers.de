@@ -52,7 +52,7 @@ const IconWrapper = styled.div`
   }
 
   display:none;
-  @media(min-width: 768px){
+  @media(min-width: 840px){
     display:inline-block;
     // width: .7rem;
     justify-content: space-around;

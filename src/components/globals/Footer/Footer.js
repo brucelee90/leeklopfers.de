@@ -57,7 +57,7 @@ const FooterWrapper = styled.footer `
   }
 
   .icon{
-    @media(min-width: 768px){
+    @media(min-width: 840px){
     display:none;
     }
     color: ${styles.colors.mainBlack};

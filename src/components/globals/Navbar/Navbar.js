@@ -34,7 +34,7 @@ const NavWrapper = styled.nav`
 
 padding: 0 .6rem;
 
-@media (min-width:768px){
+@media (min-width:840px){
     display:flex;
     align-items:center;
 }

@@ -33,6 +33,11 @@ export default class NavbarLinks extends Component {
         path: '/lebenslauf',
         name: 'Lebenslauf'
       },
+      {
+        id: 5,
+        path: '/blogging',
+        name: 'Blog'
+      },
     ]
   }
 
@@ -81,7 +86,7 @@ li{
   /* margin:.3rem; */
   transition: transform 500ms ease-in-out;
 }
-@media (max-width:767px){
+@media (max-width:840){
 
   .nav-link:before{
     display:inline-block;
@@ -101,11 +106,11 @@ li{
   }
 }
 
-height: ${props => (props.open?'10rem':'0px')};
+height: ${props => (props.open?'12rem':'0px')};
 overflow:hidden;
 transition: ${styles.transObject({time:'.15s'})};
 
-@media (min-width:768px){
+@media (min-width:840px){
   height:auto;
   display:flex;
   margin: auto;
