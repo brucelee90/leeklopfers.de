@@ -35,8 +35,8 @@ export default class NavbarLinks extends Component {
       },
       {
         id: 5,
-        path: '/blogging',
-        name: 'Blog'
+        path: 'blog.leeklopfersle.de',
+        name: '4Blogs'
       },
     ]
   }
@@ -48,6 +48,9 @@ export default class NavbarLinks extends Component {
         {
           // Über alle Links aus dem state iterieren
           this.state.links.map(item => {
+            // Test ob es sich um internen Link handelt
+            const internal = /^\/|#(?!\/)/.test(item.path)
+            if (internal) {
             return(
               // Für map() Methode braucht jedes Tag einen key.
               // key ist immer die id
@@ -59,6 +62,13 @@ export default class NavbarLinks extends Component {
               </li>
               </Scrollspy>
             )
+          }else{
+            return(
+              <li>
+                <a className="nav-link" href="http://blog.leeklopfers.de">Blog</a>
+              </li>
+            )
+          }
           })
         }
       </LinkWrapper>
