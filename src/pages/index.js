@@ -14,6 +14,7 @@ import { Parallax } from "../utils/index"
 // import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+import Hero from '../components/Hero/Hero'
 
 const SINGLE_IMAGE = graphql`
   {
@@ -46,11 +47,13 @@ const IndexPage = () => (
             <meta charSet="utf-8" />
             <title>Lee Klopfers - Frontend Entwickler</title>
             <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+            <script defer src="./script.js"></script>
           </Helmet>
 
-          <Header img={img}>
+          {/* <Header img={img}>
             <Banner title="Willkommen" subtitle="mein name ist Lee" />
-          </Header>
+          </Header> */}
+          <Hero/>
           <About />
           <Projects />
           <Parallax img={img2} />
