@@ -50,9 +50,6 @@ const IndexPage = () => (
             <script defer src="./script.js"></script>
           </Helmet>
 
-          {/* <Header img={img}>
-            <Banner title="Willkommen" subtitle="mein name ist Lee" />
-          </Header> */}
           <Hero/>
           <About />
           <Projects />

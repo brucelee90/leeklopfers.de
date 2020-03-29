@@ -27,8 +27,8 @@ const ABOUT_ME_IMG = graphql`
   }
 `
 
-const text = 'Vor knapp zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht, habe verschiedene Frameworks kennengelernt. Ich habe mich durch die Untiefen von Google gekämpft'
-const uebrschrift = 'Schön Sie kennen zu lernen'
+const text = 'Vor über zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht und habe bereits verschiedene Frameworks, wie React, Gatsby oder NextJS kennengelernt.'
+const uebrschrift = 'Schön dich kennen zu lernen'
 
 const About = () => (
   <StaticQuery

@@ -32,12 +32,7 @@ export default class NavbarLinks extends Component {
         id: 4,
         path: '/lebenslauf',
         name: 'Lebenslauf'
-      },
-      {
-        id: 5,
-        path: 'blog.leeklopfersle.de',
-        name: '4Blogs'
-      },
+      }
     ]
   }
 
