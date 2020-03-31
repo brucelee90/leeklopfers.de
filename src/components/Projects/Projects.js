@@ -1,12 +1,12 @@
 import React, { Component } from "react"
-import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 import { FaSearch, FaGithub } from "react-icons/fa"
-import restaurantPic from '../../images/ProjectImages/Restaurant.jpg'
-import ecommercePic from '../../images/ProjectImages/Ecommerce.jpeg'
-import recipesPic from '../../images/ProjectImages/Recipes.jpeg'
-import realEstatePic from '../../images/ProjectImages/realestate.jpeg'
 
+import { Title, styles, Section } from "../../utils"
+import restaurantPic from "../../images/ProjectImages/Restaurant.jpg"
+import ecommercePic from "../../images/ProjectImages/Ecommerce.jpeg"
+import recipesPic from "../../images/ProjectImages/Recipes.jpeg"
+import realEstatePic from "../../images/ProjectImages/realestate.jpeg"
 
 export default class Projects extends Component {
   state = {
@@ -36,65 +36,61 @@ export default class Projects extends Component {
         frameworks: ["react", "bootstrap", "Food2Fork - API"],
       },
       {
-        id:4,
-        name: 'Immobilien finden',
-        link:'https://lees-real-estate.netlify.com/',
-        github:'https://github.com/brucelee90/lees-real-estate',
+        id: 4,
+        name: "Immobilien finden",
+        link: "https://lees-real-estate.netlify.com/",
+        github: "https://github.com/brucelee90/lees-real-estate",
         img: realEstatePic,
         frameworks: ["react"],
-      }
+      },
     ],
   }
 
   render() {
     return (
       <>
-      <Section id="portfolio">
-        <Title title="und das sind" subtitle="meine Projekte" />
-        <ProjectWrapper>
-          {this.state.projects.map(item => {
-            return (
-              <div 
-              key={item.id}
-              className="project">
-                <img src={item.img} alt="project" />
-                <div className="info">
-                  <div className="project-container">
-                    <div className="project-name">{item.name}</div>
-                    <div className="link">
-                      <a
-                        href={item.link}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <FaSearch className="search" />
-                      </a>
-                    </div>
-
-                    <div className="project-info">
-                      
-                      <ul>
-                        {item.frameworks.map((fw, index) => {
-                          return <li key={index}>{fw}</li>
-                        })}
-                      </ul>
-                    </div>
-                    <div className="github">
+        <Section id="portfolio">
+          <Title title="und das sind" subtitle="meine Projekte" />
+          <ProjectWrapper>
+            {this.state.projects.map(item => {
+              return (
+                <div key={item.id} className="project">
+                  <img src={item.img} alt="project" />
+                  <div className="info">
+                    <div className="project-container">
+                      <div className="project-name">{item.name}</div>
+                      <div className="link">
                         <a
-                            href={item.github}
-                            rel="noopener noreferrer"
-                            target="_blank"
+                          href={item.link}
+                          rel="noopener noreferrer"
+                          target="_blank"
                         >
-                            <FaGithub className="github"/>
+                          <FaSearch className="search" />
                         </a>
-                        
+                      </div>
+
+                      <div className="project-info">
+                        <ul>
+                          {item.frameworks.map((fw, index) => {
+                            return <li key={index}>{fw}</li>
+                          })}
+                        </ul>
+                      </div>
+                      <div className="github">
+                        <a
+                          href={item.github}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <FaGithub className="github" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
-        </ProjectWrapper>
+              )
+            })}
+          </ProjectWrapper>
         </Section>
       </>
     )
@@ -110,9 +106,9 @@ const ProjectWrapper = styled.div`
   @media(min-width:576px){
         grid-template-columns: 1fr 1fr;
     }
+
     @media(min-width:768px){
         grid-template-columns: repeat(3, 1fr);
-
     }
 
   .project {

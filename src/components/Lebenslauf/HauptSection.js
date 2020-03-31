@@ -7,9 +7,27 @@ export default function HauptSection() {
       <div className="name">Lee Klopfers</div>
       <div>
         <div className="ueberschrift">Tätigkeiten</div>
+        {/* oddity */}
+
         <div className="columns">
-          <div className="zeitraum">09/2017 - heute</div>
-          {/* cidora */}
+          <div className="zeitraum">
+            11/2019 - 03/2020 <br /> (coronabedingte Kündigung)
+          </div>
+          <div className="taetigkeit">
+            oddity code GmbH,
+            <br />
+            <span style={{ fontWeight: "bold" }}>
+              Junior Frontend-Developer
+            </span>
+            <ul>
+              <li>Entwicklung von </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* cidora */}
+        <div className="columns">
+          <div className="zeitraum">09/2017 - 10/2019</div>
           <div className="taetigkeit">
             cidora GmbH,
             <br />
@@ -63,7 +81,7 @@ export default function HauptSection() {
         {/* Studium */}
         <div className="ueberschrift">Studium</div>
         <div className="columns">
-          <div className="zeitraum">10/2017 - vorr. 2020</div>
+          <div className="zeitraum">10/2017 - vorr. 2022</div>
           <div className="taetigkeit">
             Fernuniversität Hagen
             <br />
@@ -156,9 +174,10 @@ export default function HauptSection() {
           </div>
         </div>
         <div className="columns">
-          <div className="zeitraum">Produzieren/ abmischen von elektronischer Musik</div>
+          <div className="zeitraum">
+            Produzieren/ abmischen von elektronischer Musik
+          </div>
         </div>
-
       </div>
     </HauptSectionWrapper>
   )

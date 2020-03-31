@@ -1,20 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import img from "../images/BcgImages/Lemonade.jpeg"
-import { Header, Banner, BannerButton } from "../utils"
 import Projects from "../components/Projects/Projects"
 import About from "../components/About/About"
 import Contact from "../components/Contact/Contact"
-import Lebenslauf from "../components/Lebenslauf/Lebenslauf"
 import { Parallax } from "../utils/index"
-// import React from "react"
-import { Helmet } from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
 import Hero from '../components/Hero/Hero'
+import Timeline from "../components/Timeline/Timeline"
 
 const SINGLE_IMAGE = graphql`
   {
@@ -53,6 +47,7 @@ const IndexPage = () => (
           <Hero/>
           <About />
           <Projects />
+          <Timeline />
           <Parallax img={img2} />
           <Contact />
         </Layout>
