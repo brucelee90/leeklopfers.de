@@ -3,9 +3,10 @@ import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 import AboutList from "./AboutList"
 import AboutCard from "./AboutCard"
-import img from "../../images/me/Lee.jpeg"
+import img from '../../images/me/Lee.jpeg'
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
 
 const ABOUT_ME_IMG = graphql`
   {
