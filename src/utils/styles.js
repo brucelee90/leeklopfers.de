@@ -26,6 +26,7 @@ export const colors = {
   primaryRGBA: `rgb(210, 170, 92, 0.3)`,
   primaryColor: `#F4750E`,
   secondaryColor: `#F2AF29`,
+  secondaryHoverColor: `#F2B947`,
   thirdColor: `#474747`,
   danger: `#D84208`,
   success: "#49722A",

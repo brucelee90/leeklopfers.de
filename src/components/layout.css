@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Kaushan+Script');
-@import url('https://fonts.googleapis.com/css?family=Arizonia|Mr+Dafoe');
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Arizonia|Mr+Dafoe");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400");
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family:'Quicksand', sans-serif;
-  background:#f9f9f9;
+body {
+  font-family: "Quicksand", sans-serif;
+  background: #f9f9f9;
 }
 
-:root{
-  --mainRed:red;
+*::selection {
+  background: #f2c488;
+}
+
+:root {
+  --mainRed: red;
 }

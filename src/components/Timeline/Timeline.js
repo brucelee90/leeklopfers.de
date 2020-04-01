@@ -4,9 +4,9 @@ import { FaReact } from "react-icons"
 
 import { styles, Section } from "../../utils"
 import TimelineProject from "./TimelineProject"
-import DCC from "../../images/ProjectImages/DCC_All.gif"
-import Avene from "../../images/ProjectImages/Avene_All.gif"
-import Aderma from "../../images/ProjectImages/Aderma_All.gif"
+import DCC from "../../images/ProjectImages/DCC_All_Small.gif"
+import Avene from "../../images/ProjectImages/Avene_All_Small.gif"
+import Aderma from "../../images/ProjectImages/Aderma_All_Small.gif"
 import Restaurant from "../../images/ProjectImages/Restaurant.jpg"
 
 const projects = [

@@ -1,12 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import { Section, styles } from "../../utils"
-import { FaMapMarker, FaPhone, FaEnvelopeOpenText, FaBirthdayCake, FaLinkedin, FaGithub } from "react-icons/fa"
-import {Link} from 'gatsby'
-import img from '../../images/LeeKlopfers.png'
+import {
+  FaMapMarker,
+  FaPhone,
+  FaEnvelopeOpenText,
+  FaBirthdayCake,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa"
+import img from "../../images/Lee.png"
 
 export default function Sidebar({ infos }) {
-
   return (
     <SidebarWrapper>
       <div className="img" />
@@ -63,9 +68,9 @@ export default function Sidebar({ infos }) {
         </ul>
       </div>
 
-    {/* Links */}
+      {/* Links */}
       <div className="ueberschrift">Links</div>
-      
+
       <div className="info">
         <div>
           <FaLinkedin />
@@ -74,14 +79,19 @@ export default function Sidebar({ infos }) {
         <div />
         <ul>
           <li>
-            <a href='https://www.linkedin.com/in/lee-klopfers-6b9015173' target="_blank" rel="noopener" className="link">
-                 linkedin.com/leeklopfers
+            <a
+              href="https://www.linkedin.com/in/lee-klopfers-6b9015173"
+              target="_blank"
+              rel="noopener"
+              className="link"
+            >
+              linkedin.com/leeklopfers
             </a>
           </li>
         </ul>
       </div>
 
-        <div className="info">
+      <div className="info">
         <div>
           <FaGithub />
         </div>
@@ -89,13 +99,17 @@ export default function Sidebar({ infos }) {
         <div />
         <ul>
           <li>
-            <a href='https://github.com/brucelee90' target="_blank" rel="noopener" className="link">
-                 github.com/brucelee90
+            <a
+              href="https://github.com/brucelee90"
+              target="_blank"
+              rel="noopener"
+              className="link"
+            >
+              github.com/brucelee90
             </a>
           </li>
         </ul>
       </div>
-
     </SidebarWrapper>
   )
 }
