@@ -7,7 +7,7 @@ import Projects from "../components/Projects/Projects"
 import About from "../components/About/About"
 import Contact from "../components/Contact/Contact"
 import { Parallax } from "../utils/index"
-import Hero from '../components/Hero/Hero'
+import Hero from "../components/Hero/Hero"
 import Timeline from "../components/Timeline/Timeline"
 
 const SINGLE_IMAGE = graphql`
@@ -19,7 +19,7 @@ const SINGLE_IMAGE = graphql`
         }
       }
     }
-    img2: file(relativePath: { eq: "BcgImages/Contact.jpeg" }) {
+    img2: file(relativePath: { eq: "BcgImages/Contact.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
           src
@@ -44,7 +44,7 @@ const IndexPage = () => (
             <script defer src="./script.js"></script>
           </Helmet>
 
-          <Hero/>
+          <Hero />
           <About />
           <Projects />
           <Timeline />

@@ -9,7 +9,7 @@ export default function Parallax({ img }) {
 const ParallaxWrapper = styled.div`
   /* background:red; */
   height: 75vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
     url(${props => props.img}) center/cover fixed no-repeat;
   /* 
   display: flex;

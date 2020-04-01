@@ -68,6 +68,7 @@ const TimelineProjectWrapper = styled.div`
     margin-bottom: 0.8rem;
   }
   .image {
+    border-radius: 5px;
     width: 100%;
     display: block;
 

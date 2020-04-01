@@ -18,7 +18,14 @@ const projects = [
     image: DCC,
     github: "",
     website: "https://www.eau-thermale-avene.de/dermo-cosme-card-dev",
-    techStack: ["ReactJS", "Sass", "Google Tag Manager"],
+    techStack: [
+      "ReactJS",
+      "NextJS",
+      "StorybookJS",
+      "Sass",
+      "Atomic Design",
+      "Google Tag Manager",
+    ],
   },
   {
     name: "Avène - Gewinnspiel",
@@ -28,7 +35,14 @@ const projects = [
     image: Avene,
     github: "",
     website: "https://www.eau-thermale-avene.de/gewinnspiel",
-    techStack: ["ReactJS", "Sass"],
+    techStack: [
+      "ReactJS",
+      "NextJS",
+      "StorybookJS",
+      "Sass",
+      "Atomic Design",
+      "FB Pixel",
+    ],
   },
   {
     name: "A-DERMA - Exomega",
