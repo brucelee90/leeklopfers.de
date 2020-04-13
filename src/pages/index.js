@@ -46,7 +46,6 @@ const IndexPage = () => (
 
           <Hero />
           <About />
-          <Projects />
           <Timeline />
           <Parallax img={img2} />
           <Contact />

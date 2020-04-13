@@ -15,13 +15,15 @@ export default function AboutPage() {
           <p>
             Vor über zwei Jahren hat meine Reise als Web-Entwickler begonnen.
             Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht und
-            habe bereits verschiedene Frameworks, wie React, Gatsby oder NextJS
-            kennengelernt.
+            habe bereits verschiedene Frameworks, wie ReactJS, GatsbyJS oder
+            NextJS kennengelernt.
           </p>
           <p>
             Inzwischen beherrsche ich diese gut und habe ein weitaus tieferes
-            Verständnis dafür. In der zwischenzeit habe ich auch professionelle
-            Erfahrung gesammelt. Und konnte einige Kundenprojekte umsetzen.
+            Verständnis dafür. Ich konnte auch bereits professionelle Erfahrung
+            sammeln und habe einige{" "}
+            <a href="https://leeklopfers.de/#portfolio">Kundenprojekte</a>{" "}
+            umgesetzt.
           </p>
           <p>
             Zudem bin ich eingeschriebener Teilzeit-Student an der
@@ -30,8 +32,8 @@ export default function AboutPage() {
             Wirtschaftsinformatik.
           </p>
           <p>
-            Wenn ich nicht am Arbeiten, oder am lernen bin, genieße ich meine
-            Zeit mit Freunden und der Familie, oder beim Sport.
+            Außer meiner Arbeit habe ich natürlich noch andere Hobbies wie zum
+            Beispiel Sport treiben und mich mit Freunden und Familie treffen.
           </p>
         </AboutPageTextWrapper>
       </Section>

@@ -7,7 +7,12 @@ import { Section, styles } from "../../utils"
 export default class Lebenslauf extends Component {
   constructor(props) {
     super(props)
-    this.state = { value: "", active: false, display: "none" }
+    this.state = {
+      value: "",
+      active: false,
+      display: "none",
+      incorrectPassword: "",
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -31,12 +36,14 @@ export default class Lebenslauf extends Component {
   handleSubmit(event) {
     event.preventDefault()
     let active = false
+    let incorrectPasswordText = "Bitte gebe das korrekte Passwort ein"
 
-    if (this.state.value === "test") {
+    if (this.state.value === "klopfers_lebenslauf") {
       active = true
+      incorrectPasswordText = ""
     }
 
-    this.setState({ active: active })
+    this.setState({ active: active, incorrectPassword: incorrectPasswordText })
   }
 
   render() {
@@ -56,6 +63,9 @@ export default class Lebenslauf extends Component {
             />
             <span className="span">Eingabe des Passworts</span>
           </div>
+          <span className="incorrect-password">
+            {this.state.incorrectPassword}
+          </span>
           <button className="submit" onClick={this.handleSubmit}>
             Eingabe
           </button>
@@ -114,7 +124,7 @@ const Form = styled.form`
     display: block;
     padding: 9px;
     border: 1px solid #ddd;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-radius: 3px;
 
     .label {
@@ -174,5 +184,10 @@ const Form = styled.form`
     &:focus {
       outline: none;
     }
+  }
+  .incorrect-password {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: red;
   }
 `

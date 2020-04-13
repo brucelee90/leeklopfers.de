@@ -3,10 +3,9 @@ import { Title, styles, Section } from "../../utils"
 import styled from "styled-components"
 import AboutList from "./AboutList"
 import AboutCard from "./AboutCard"
-import img from '../../images/me/Lee.jpeg'
+import img from "../../images/me/Lee.jpeg"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
 
 const ABOUT_ME_IMG = graphql`
   {
@@ -28,7 +27,7 @@ const ABOUT_ME_IMG = graphql`
 `
 
 const text =
-  "Vor über zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht und habe bereits verschiedene Frameworks, wie React, Gatsby oder NextJS kennengelernt."
+  "Vor über zwei Jahren hat meine Reise als Web-Entwickler begonnen. Ich habe mir die Basics zu HTML, CSS und Javascript beigebracht und habe bereits verschiedene Frameworks, wie ReactJS, GatsbyJS oder NextJS kennengelernt."
 const uebrschrift = "Schön dich kennen zu lernen"
 
 const About = () => (

@@ -67,7 +67,7 @@ const projects = [
 const Timeline = () => {
   return (
     <Section id="timeline">
-      <TimelineWrapper>
+      <TimelineWrapper id="portfolio">
         <div id="timeline-content">
           <ul className="timeline">
             {projects.map(project => (

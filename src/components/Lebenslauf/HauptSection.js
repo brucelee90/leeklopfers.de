@@ -20,7 +20,38 @@ export default function HauptSection() {
               Junior Frontend-Developer
             </span>
             <ul>
-              <li>Entwicklung von </li>
+              <li>
+                Erstellung von responsive Microsites, Kampagnenseiten und
+                anderen digitalen Medien mit den Technologien HTML5, CSS3 und
+                Javascript, sowie die Verwendung von Frontend Frameworks wie
+                ReactJS, NextJS, StorybookJS unter Beachtung des Atomic Designs.
+              </li>
+              <li>
+                Verwendung von CSS Precompiler wie Sass und
+                Entwicklungswerkzeugen wie NodeJS und NPM.
+              </li>
+              <li>
+                Integration der erstellten Seiten in die Content Management
+                Systeme der Kunden.
+              </li>
+              <li>
+                Wartung und Umsetzung von Bugfixing in bestehenden Produkten
+                unter Verwendung von Libraries wie jQuery und Frameworks wie
+                ReactJS.
+              </li>
+              <li>Erstellung von technischen Dokumentationen und Konzepten.</li>
+              <li>
+                Anwendung der Programme/ Webanwendungen VS Code, PHPStorm,
+                Sourcetree, GitLab, Sketch, und Photoshop
+              </li>
+              <li>
+                Verwaltung des Sourcecodes über das Versionskontrollsystem Git.
+              </li>
+              <li>
+                Mitarbeit in interdisziplinären und agilen Entwicklungsteams,
+                wie z.B. das gemeinsame Erarbeiten von Lösungen während der
+                Konzeptions- und Designphase.
+              </li>
             </ul>
           </div>
         </div>
