@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9743f214-65ef-4c8c-94ad-c7cc2946ae10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lebenslauf/HauptSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lebenslauf/HauptSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Lebenslauf/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lebenslauf/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Timeline/Timeline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Timeline/Timeline.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +50,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587127545256</updated>
-      <workItem from="1587127546550" duration="3861000" />
+      <workItem from="1587127546550" duration="5145000" />
     </task>
+    <task id="LOCAL-00001" summary="Changing CV">
+      <created>1587131843887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587131843887</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -68,5 +75,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changing CV" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing CV" />
   </component>
 </project>

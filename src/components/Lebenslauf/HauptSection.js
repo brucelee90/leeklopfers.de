@@ -18,7 +18,7 @@ export default function HauptSection() {
 
         <div className="columns">
           <div className="zeitraum">
-            11/2019 - 03/2020 <br /> (coronabedingte Kündigung)
+            11/2019 - 04/2020 <br />
           </div>
           <div className="taetigkeit">
             oddity code GmbH,
