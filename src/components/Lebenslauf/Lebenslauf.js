@@ -36,7 +36,7 @@ export default class Lebenslauf extends Component {
   handleSubmit(event) {
     event.preventDefault()
     let active = false
-    let incorrectPasswordText = "Bitte gebe das korrekte Passwort ein"
+    let incorrectPasswordText = "Bitte gib das korrekte Passwort ein"
 
     if (this.state.value === "klopfers_lebenslauf") {
       active = true
@@ -113,12 +113,16 @@ const LayoutWrapper = styled.div`
 const Form = styled.form`
   display: ${props => props.display};
   flex-direction: column;
-  width: 50%;
   margin: auto;
   background: white;
   padding: 2rem 1rem;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  width: 100%;
+  
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 
   .input-wrapper {
     display: block;
