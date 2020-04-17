@@ -9,13 +9,13 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa"
-import img from "../../images/Lee.png"
+import img from "../../images/Lee-tinified.png"
 
 export default function Sidebar({ infos }) {
   return (
     <SidebarWrapper>
       <div className="img" />
-      <div className="ueberschrift">Info</div>
+      <div className="ueberschrift sidebar">Info</div>
 
       {/* Info Section */}
       <div className="info">
@@ -51,7 +51,7 @@ export default function Sidebar({ infos }) {
         <div className="ueberschrift-2">E-Mail</div>
         <div />
         <ul>
-          <li>leeklopfers@gmx.de</li>
+          <li><a className="link" href="mailto:leeklopfers@gmx.de">leeklopfers@gmx.de</a></li>
         </ul>
       </div>
 
@@ -69,13 +69,13 @@ export default function Sidebar({ infos }) {
       </div>
 
       {/* Links */}
-      <div className="ueberschrift">Links</div>
+      <div className="ueberschrift sidebar">Links</div>
 
       <div className="info">
         <div>
           <FaLinkedin />
         </div>
-        <div className="ueberschrift-2">Linked in</div>
+        <div className="ueberschrift-2">LinkedIn</div>
         <div />
         <ul>
           <li>
@@ -116,9 +116,10 @@ export default function Sidebar({ infos }) {
 
 const SidebarWrapper = styled.div`
   height: 100%;
-  background: #ccc;
+  background: #a9a9a9;
   padding: 2rem;
   grid-template-rows: 10rem 4fr 1fr;
+  color: #fff;
 
   .img {
     background: url('${img}');
@@ -145,7 +146,7 @@ const SidebarWrapper = styled.div`
 
         a{
             text-decoration:none;
-            color: black;
+            color: white;
         }
         .link:after{
             display:block;
@@ -161,5 +162,7 @@ const SidebarWrapper = styled.div`
       }
   }
 
-
+    .sidebar {
+      border-bottom: 1px solid white !important;
+    }
 `

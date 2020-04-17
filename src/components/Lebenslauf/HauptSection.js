@@ -4,9 +4,16 @@ import styled from "styled-components"
 export default function HauptSection() {
   return (
     <HauptSectionWrapper>
-      <div className="name">Lee Klopfers</div>
+      <div className="cv-head">
+       <div className="name">
+        Lee Klopfers
+       </div>
+        <div className="title">
+          Frontend Developer
+        </div>
+      </div>
       <div>
-        <div className="ueberschrift">Tätigkeiten</div>
+        <div className="ueberschrift">Berufliche Laufbahn</div>
         {/* oddity */}
 
         <div className="columns">
@@ -16,7 +23,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             oddity code GmbH,
             <br />
-            <span style={{ fontWeight: "bold" }}>
+            <span className="job-title">
               Junior Frontend-Developer
             </span>
             <ul>
@@ -62,7 +69,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             cidora GmbH,
             <br />
-            <span style={{ fontWeight: "bold" }}>IT-Berater</span>
+            <span className="job-title">IT-Berater</span>
             <ul>
               <li>Beratung bei Projekten in Patentanwaltskanzleien</li>
               <li>Fachliche Analyse der Problemstellungen</li>
@@ -77,7 +84,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             Raumtechnik Messebau & Event Services GmbH,
             <br />
-            <span style={{ fontWeight: "bold" }}>Debitorenbuchhalter</span>
+            <span className="job-title">Debitorenbuchhalter</span>
             <ul>
               <li>Forderungsmanagement und Mahnwesen</li>
               <li>Verbuchung von Kundenrechnungen</li>
@@ -95,7 +102,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             Malteser Hilfsdienst e.V,
             <br />
-            <span style={{ fontWeight: "bold" }}>Fahrdienst</span>
+            <span className="job-title">Fahrdienst</span>
           </div>
         </div>
 
@@ -105,7 +112,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             Malteser Hilfsdienst e.V,
             <br />
-            <span style={{ fontWeight: "bold" }}>Zivildienst</span>
+            <span className="job-title">Zivildienst</span>
           </div>
         </div>
 
@@ -116,7 +123,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             Fernuniversität Hagen
             <br />
-            <span style={{ fontWeight: "bold" }}>Wirtschaftsinformatik</span>
+            <span className="job-title">Wirtschaftsinformatik</span>
           </div>
         </div>
         <div className="columns">
@@ -124,7 +131,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             Universität Frankfurt
             <br />
-            <span style={{ fontWeight: "bold" }}>
+            <span className="job-title">
               Wirtschaftswissenschaften
             </span>
           </div>
@@ -137,7 +144,7 @@ export default function HauptSection() {
           <div className="taetigkeit">
             Raumtechnik Messebau & Event Services GmbH
             <br />
-            <span style={{ fontWeight: "bold" }}>
+            <span className="job-title">
               Ausbildung zum Industriekaufmann
             </span>
           </div>
@@ -149,11 +156,20 @@ export default function HauptSection() {
           <div className="zeitraum">09/2007 - 09/2010</div>
           <div className="taetigkeit">
             Johann Friedrich von Cotta Wirtschaftsgymnasium
+            <br />
+            <span className="job-title">
+              Allg. Hochschulreife
+            </span>
           </div>
         </div>
         <div className="columns">
           <div className="zeitraum">09/2001 - 09/2007</div>
-          <div className="taetigkeit">Jahn-Realschule Bad-Cannstatt</div>
+          <div className="taetigkeit">Jahn-Realschule Bad-Cannstatt
+            <br />
+            <span className="job-title">
+              Mittlere Reife
+            </span>
+          </div>
         </div>
 
         {/* Kenntnisse */}
@@ -169,13 +185,26 @@ export default function HauptSection() {
               <li>Französisch (Grundkenntnisse)</li>
             </ul>
           </div>
-          <div className="zeitraum">Programmiersprachen</div>
+          <div className="zeitraum">Skriptsprachen</div>
+          <div className="taetigkeit">
+            <ul style={{ marginTop: "0" }}>
+              <li>JavaScript</li>
+              <li>VB Script</li>
+              <li>PHP</li>
+            </ul>
+          </div>
+          <div className="zeitraum">Abfragesprachen</div>
           <div className="taetigkeit">
             <ul style={{ marginTop: "0" }}>
               <li>SQL</li>
-              <li>Java</li>
-              <li>VBA</li>
-              <li>JavaScript</li>
+              <li>GraphQL</li>
+              <li>XPath</li>
+            </ul>
+          </div>
+          <div className="zeitraum">Programmiersprachen</div>
+          <div className="taetigkeit">
+            <ul style={{ marginTop: "0" }}>
+              <li>Java (Grundkenntnisse)</li>
             </ul>
           </div>
           <div className="zeitraum">Web-Entwicklung</div>
@@ -184,7 +213,7 @@ export default function HauptSection() {
               <li>HTML5</li>
               <li>CSS3/ Sass</li>
               <li>ReactJS</li>
-              <li>Bootstrap</li>
+              <li>Laravel</li>
             </ul>
           </div>
           <div className="zeitraum">Office-Programme</div>
@@ -192,21 +221,8 @@ export default function HauptSection() {
             <ul style={{ marginTop: "0" }}>
               <li>Word</li>
               <li>Excel</li>
+              <li>Outlook</li>
             </ul>
-          </div>
-        </div>
-
-        {/* Hobbys und Interessen */}
-        <div className="ueberschrift">Hobbys & Interessen</div>
-        <div className="columns">
-          <div className="zeitraum">Boxen</div>
-          <div className="taetigkeit">
-            Mitglied bei Rot-Weiß Stuttgart seit 2007
-          </div>
-        </div>
-        <div className="columns">
-          <div className="zeitraum">
-            Produzieren/ abmischen von elektronischer Musik
           </div>
         </div>
       </div>
@@ -220,11 +236,21 @@ const HauptSectionWrapper = styled.div`
   grid-template-rows: 10rem 4fr;
   padding-bottom: 2rem;
 
-  .name {
-    display: flex;
+  .cv-head {
+  
+    padding-top: 2rem;
     align-items: center;
     font-size: 2rem;
     font-weight: bold;
+    
+    .name {
+    
+    }
+    
+    .title {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
   }
 
   .zeitraum {
@@ -250,5 +276,10 @@ const HauptSectionWrapper = styled.div`
         padding-right: 0.2rem;
       }
     }
+  }
+  
+  .job-title{
+    font-weight: 800;
+    font-style: italic;  
   }
 `
